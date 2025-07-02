@@ -28,24 +28,20 @@
   [= #linguify("invoice")]
 
   grid(
-    columns: (1fr, 1fr),
-    align: (left, right),
+    columns: (2fr, 2fr, auto),
+    align: (left + top, right + top, right),
+    gutter: 2em,
   )[
     *#linguify("purchaser")*\
     #recipient.name\
     #recipient.street\
     #recipient.zip_code #recipient.city
-
   ][
-    #grid(columns: (auto, auto), gutter: 2em)[
-      #align(horizon)[
-        #seller.name\
-        #seller.business_id\
-        #seller.street\
-        #seller.zip_code #seller.city
-      ]
-    ][
-      #image(seller.logo, height: 3cm)
-    ]
+    #seller.name\
+    #seller.business_id\
+    #seller.street\
+    #seller.zip_code #seller.city
+  ][
+    #image(seller.logo, height: 5em)
   ]
 }
