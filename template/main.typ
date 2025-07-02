@@ -1,4 +1,4 @@
-#import "/src/lib.typ": *
+#import "../src/lib.typ": *
 
 #let data = yaml("data.yaml")
 #show: invoice(
