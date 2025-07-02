@@ -1,5 +1,7 @@
 #import "@preview/linguify:0.4.2": linguify, set-database
 #import "utils/preprocess_items.typ": preprocess_items
+#import "@preview/oxifmt:1.0.0": strfmt
+
 
 #let invoice(
   lang: "en",
@@ -24,6 +26,8 @@
 ) = {
   let translations = toml("translations.toml")
   set-database(translations)
+  let decimal_separators = ("fi": ",", "en": ".")
+  let strfmt = strfmt.with(fmt-decimal-separator: decimal_separators.at(lang))
 
   set text(lang: lang)
 
@@ -55,4 +59,26 @@
   ]
 
   let items = preprocess_items(items)
+  table(
+    columns: (2fr, 1fr, 1fr, 1fr, 1fr),
+    align: (left, right, right, right, right),
+    table.header(
+      linguify("item"),
+      linguify("unit_price"),
+      linguify(
+        "quantity",
+      ),
+      [#linguify("vat")-%],
+      [#linguify("total_with_tax") (#currency)],
+    ),
+    ..for item in items {
+      (
+        [#item.name],
+        [#strfmt("{:.2}", float(item.unit_price))],
+        [#item.quantity],
+        [#strfmt("{:.2}", float(item.vat_rate))],
+        [#strfmt("{:.2}", float(item.total_price))],
+      )
+    },
+  )
 }

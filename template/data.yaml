@@ -12,3 +12,7 @@ items:
     quantity: 3
     unit_price: 10
     vat_rate: 10
+
+  - name: Phone
+    quantity: 1
+    unit_price: 10000

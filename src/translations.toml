@@ -4,7 +4,18 @@ default-lang = "en"
 [lang.en]
 invoice = "Invoice"
 purchaser = "Recipient"
+item = "Item"
+quantity = "Quantity"
+vat = "VAT"
+unit_price = "Unit Price"
+total_with_tax = "Total (incl. VAT)"
 
 [lang.fi]
 invoice = "Lasku"
 purchaser = "Vastaanottaja"
+item = "Tuote"
+quantity = "Määrä"
+vat = "ALV"
+unit_price = "Yksikköhinta"
+total = "Yhteensä"
+total_with_tax = "Yhteensä (sis. ALV)"
