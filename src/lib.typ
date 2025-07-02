@@ -23,11 +23,14 @@
   set-database(translations)
 
   set text(lang: lang)
+  show heading.where(level: 1): align.with(center)
+
+  [= #linguify("invoice")]
+
   grid(
     columns: (1fr, 1fr),
     align: (left, right),
   )[
-    = #linguify("invoice")
 
     #recipient.name\
     #recipient.street\
