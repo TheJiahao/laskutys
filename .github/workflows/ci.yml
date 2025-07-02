@@ -40,4 +40,4 @@ jobs:
         uses: typst-community/setup-typst@v4
 
       - name: Build
-        run: typst compile template/main.typ
+        run: typst compile template/main.typ --root .
