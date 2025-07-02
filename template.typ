@@ -33,7 +33,7 @@
     #recipient.name\
     #recipient.street\
     #recipient.zip_code #recipient.city
-    
+
   ][
     #grid(columns: (auto, auto), gutter: 2em)[
       #align(horizon)[
