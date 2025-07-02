@@ -1,14 +1,14 @@
 items:
   - name: Apple
     quantity: 10
-    price: 2
-    vat: 14
+    unit_price: 2
+    vat_rate: 14
 
   - name: Battery AA
     quantity: 2
-    price: 2
+    unit_price: 2
 
   - name: Newspaper
     quantity: 3
-    price: 10
-    vat: 10
+    unit_price: 10
+    vat_rate: 10

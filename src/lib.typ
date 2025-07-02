@@ -1,4 +1,5 @@
 #import "@preview/linguify:0.4.2": linguify, set-database
+#import "utils/preprocess_items.typ": preprocess_items
 
 #let invoice(
   lang: "en",
@@ -19,6 +20,7 @@
     zip_code: "01234",
     city: "City",
   ),
+  items,
 ) = {
   let translations = toml("translations.toml")
   set-database(translations)
@@ -51,4 +53,6 @@
   ][
     #image(seller.logo, height: 5em)
   ]
+
+  let items = preprocess_items(items)
 }
