@@ -4,6 +4,8 @@
 #let invoice(
   lang: "en",
   currency: "€",
+  date: datetime.today(),
+  invoice_number: none,
   seller: (
     name: "Company Oy",
     business_id: "1234567-8",
@@ -23,9 +25,15 @@
   set-database(translations)
 
   set text(lang: lang)
-  show heading.where(level: 1): align.with(center)
 
-  [= #linguify("invoice")]
+  let invoice_number = if invoice_number == none {
+    date.display("[year padding:zero][month padding:zero][day padding:zero]1")
+  } else { invoice_number }
+
+  align(center)[
+    = #linguify("invoice") \##invoice_number
+    #date.display()
+  ]
 
   grid(
     columns: (2fr, 2fr, auto),
