@@ -1,6 +1,5 @@
 #import "@preview/linguify:0.4.2": linguify, set-database
 
-
 #let invoice(
   lang: "en",
   currency: "€",
