@@ -18,7 +18,6 @@
     zip_code: "01234",
     city: "City",
   ),
-  body,
 ) = {
   let translations = toml("translations.toml")
   set-database(translations)
