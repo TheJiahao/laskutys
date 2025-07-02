@@ -3,6 +3,8 @@ default-lang = "en"
 
 [lang.en]
 invoice = "Invoice"
+purchaser = "Recipient"
 
 [lang.fi]
 invoice = "Lasku"
+purchaser = "Vastaanottaja"

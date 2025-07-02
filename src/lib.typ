@@ -13,7 +13,7 @@
     city: "City",
   ),
   recipient: (
-    name: "Recipient",
+    name: "Recipient Name",
     street: "Street 123",
     zip_code: "01234",
     city: "City",
@@ -31,7 +31,7 @@
     columns: (1fr, 1fr),
     align: (left, right),
   )[
-
+    *#linguify("purchaser")*\
     #recipient.name\
     #recipient.street\
     #recipient.zip_code #recipient.city
