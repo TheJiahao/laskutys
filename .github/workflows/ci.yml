@@ -1,0 +1,43 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        uses: baptiste0928/cargo-install@v3
+        with:
+          crate: typstyle
+
+      - name: Format
+        run: typstyle -i .
+
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions[bot]
+          author_email: github-ations[bot]@users.noreply.github.com
+          message: "Format"
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Build
+        run: typst compile main.typ
