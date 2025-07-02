@@ -11,5 +11,4 @@
 
   set text(lang: lang)
   [= #linguify("invoice")]
-  
 }
