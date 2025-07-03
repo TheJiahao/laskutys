@@ -1,3 +1,1 @@
-#let calculation_details() = {
-  
-}
+#let calculation_details() = {}
