@@ -73,7 +73,7 @@
     ),
     ..for item in items {
       (
-        [#item.name],
+        [#item.description],
         [#strfmt("{:.2}", float(item.unit_price))],
         [#item.quantity],
         [#strfmt("{:.2}", float(item.vat_rate))],

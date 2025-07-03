@@ -1,17 +1,17 @@
-- name: Apple
+- description: Apple
   quantity: 10
   unit_price: 2
   vat_rate: 14
 
-- name: Battery AA
+- description: Battery AA
   quantity: 2
   unit_price: 2
 
-- name: Newspaper
+- description: Newspaper
   quantity: 3
   unit_price: 10
   vat_rate: 10
 
-- name: Phone
+- description: Phone
   quantity: 1
   unit_price: 10000
