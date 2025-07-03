@@ -41,7 +41,7 @@
     [
       #if logo != none { image(logo, height: 5em) }
 
-      #legal_entity(seller, "Seller")
+      #legal_entity(seller, translate("seller"))
     ],
   )
 
