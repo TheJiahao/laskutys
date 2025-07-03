@@ -4,6 +4,7 @@
 #import "utils/get_decimal_separator.typ": get_decimal_separator
 #import "components/item_row.typ": item_row
 #import "components/item_list.typ": item_list
+#import "components/header.typ": header
 
 #let invoice(
   lang: "en",
@@ -28,14 +29,7 @@
 ) = {
   set text(lang: lang)
 
-  let invoice_number = if invoice_number == none {
-    date.display("[year padding:zero][month padding:zero][day padding:zero]1")
-  } else { invoice_number }
-
-  align(center)[
-    = #translate("invoice") \##invoice_number
-    #date.display()
-  ]
+  header(date, invoice_number: invoice_number)
 
   grid(
     columns: (2fr, 2fr, auto),
