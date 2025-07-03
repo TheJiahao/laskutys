@@ -6,4 +6,4 @@ build:
 build-dev:
     cd tools;\
     cargo build --target wasm32-unknown-unknown;\
-    cp target/wasm32-unknown-unknown/release/tools.wasm tools.wasm;
+    cp target/wasm32-unknown-unknown/debug/tools.wasm tools.wasm;
