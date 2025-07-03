@@ -33,16 +33,17 @@
   header(date, invoice_number: invoice_number)
 
   grid(
-    columns: (2fr, 2fr, auto),
-    align: (left + top, right + top, right),
+    columns: (1fr, 1fr),
+    align: (left + bottom, right + bottom),
     gutter: 2em,
-  )[
-    #legal_entity(recipient, translate("purchaser"))
-  ][
-    #legal_entity(seller, "Seller")
-  ][
-    #image(logo, height: 5em)
-  ]
+
+    legal_entity(recipient, translate("purchaser")),
+    [
+      #if logo != none { image(logo, height: 5em) }
+
+      #legal_entity(seller, "Seller")
+    ],
+  )
 
   item_list(preprocess_items(items), currency, lang)
 }
