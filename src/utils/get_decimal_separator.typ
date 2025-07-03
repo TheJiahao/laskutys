@@ -1,6 +1,5 @@
-#let get_decimal_separator() = context {
+#let get_decimal_separator(lang) = {
   let decimal_separators = ("fi": ",", "en": ".")
-  let lang = text.lang
 
   decimal_separators.at(lang)
 }

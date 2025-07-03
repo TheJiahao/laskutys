@@ -2,6 +2,7 @@
 #import "utils/preprocess_items.typ": preprocess_items
 #import "@preview/oxifmt:1.0.0": strfmt
 #import "utils/get_decimal_separator.typ": get_decimal_separator
+#import "components/item_row.typ": item_row
 
 #let invoice(
   lang: "en",
@@ -27,9 +28,6 @@
   set text(lang: lang)
 
   let translations = toml("translations.toml")
-  context let strfmt = strfmt.with(
-    fmt-decimal-separator: get_decimal_separator(),
-  )
   set-database(translations)
 
   let invoice_number = if invoice_number == none {
@@ -73,13 +71,7 @@
       [#linguify("total_with_tax") (#currency)],
     ),
     ..for item in items {
-      (
-        [#item.description],
-        [#strfmt("{:.2}", float(item.unit_price))],
-        [#item.quantity],
-        [#strfmt("{:.2}", float(item.vat_rate))],
-        [#strfmt("{:.2}", float(item.total_price))],
-      )
+      item_row(item, lang)
     },
   )
 }
