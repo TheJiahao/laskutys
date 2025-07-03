@@ -1,8 +1,9 @@
-#import "@preview/linguify:0.4.2": linguify, set-database
+#import "utils/translate.typ": translate
 #import "utils/preprocess_items.typ": preprocess_items
 #import "@preview/oxifmt:1.0.0": strfmt
 #import "utils/get_decimal_separator.typ": get_decimal_separator
 #import "components/item_row.typ": item_row
+#import "components/item_list.typ": item_list
 
 #let invoice(
   lang: "en",
@@ -27,15 +28,12 @@
 ) = {
   set text(lang: lang)
 
-  let translations = toml("translations.toml")
-  set-database(translations)
-
   let invoice_number = if invoice_number == none {
     date.display("[year padding:zero][month padding:zero][day padding:zero]1")
   } else { invoice_number }
 
   align(center)[
-    = #linguify("invoice") \##invoice_number
+    = #translate("invoice") \##invoice_number
     #date.display()
   ]
 
@@ -44,7 +42,7 @@
     align: (left + top, right + top, right),
     gutter: 2em,
   )[
-    *#linguify("purchaser")*\
+    *#translate("purchaser")*\
     #recipient.name\
     #recipient.street\
     #recipient.zip_code #recipient.city
@@ -58,17 +56,18 @@
   ]
 
   let items = preprocess_items(items)
+
   table(
     columns: (2fr, 1fr, 1fr, 1fr, 1fr),
     align: (left, right, right, right, right),
     table.header(
-      linguify("item"),
-      linguify("unit_price"),
-      linguify(
+      translate("item"),
+      translate("unit_price"),
+      translate(
         "quantity",
       ),
-      [#linguify("vat")-%],
-      [#linguify("total_with_tax") (#currency)],
+      [#translate("vat")-%],
+      [#translate("total_with_tax") (#currency)],
     ),
     ..for item in items {
       item_row(item, lang)
