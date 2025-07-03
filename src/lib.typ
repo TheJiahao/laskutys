@@ -55,22 +55,5 @@
     #image(seller.logo, height: 5em)
   ]
 
-  let items = preprocess_items(items)
-
-  table(
-    columns: (2fr, 1fr, 1fr, 1fr, 1fr),
-    align: (left, right, right, right, right),
-    table.header(
-      translate("item"),
-      translate("unit_price"),
-      translate(
-        "quantity",
-      ),
-      [#translate("vat")-%],
-      [#translate("total_with_tax") (#currency)],
-    ),
-    ..for item in items {
-      item_row(item, lang)
-    },
-  )
+  item_list(preprocess_items(items), currency, lang)
 }
