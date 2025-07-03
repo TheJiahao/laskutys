@@ -1,0 +1,3 @@
+#let calculation_details() = {
+  
+}
