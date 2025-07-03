@@ -1,7 +1,7 @@
 #import "@preview/linguify:0.4.2": linguify, set-database
 #import "utils/preprocess_items.typ": preprocess_items
 #import "@preview/oxifmt:1.0.0": strfmt
-
+#import "utils/get_decimal_separator.typ": get_decimal_separator
 
 #let invoice(
   lang: "en",
@@ -24,12 +24,13 @@
   ),
   items,
 ) = {
-  let translations = toml("translations.toml")
-  set-database(translations)
-  let decimal_separators = ("fi": ",", "en": ".")
-  let strfmt = strfmt.with(fmt-decimal-separator: decimal_separators.at(lang))
-
   set text(lang: lang)
+
+  let translations = toml("translations.toml")
+  context let strfmt = strfmt.with(
+    fmt-decimal-separator: get_decimal_separator(),
+  )
+  set-database(translations)
 
   let invoice_number = if invoice_number == none {
     date.display("[year padding:zero][month padding:zero][day padding:zero]1")
