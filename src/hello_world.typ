@@ -2,4 +2,4 @@
 #import "/src/utils/call_wasm.typ": call_wasm
 
 #str(hello_world())
-#call_wasm(hello_list, ("Hello world",))
+#call_wasm(hello_list, (1.0,2.0,))

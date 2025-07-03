@@ -36,12 +36,12 @@ pub fn hello_string(arg: &[u8]) -> Vec<u8> {
 pub fn hello_list(arg: &[u8]) -> Vec<u8> {
     println!("{:?}", arg);
 
-    let data: Vec<String> = match from_reader(arg) {
+    let data: Vec<f64> = match from_reader(arg) {
         Ok(items) => items,
         Err(e) => {
             eprintln!("{:?}", e);
 
-            vec!["Error".to_string()]
+            vec![1.23]
         }
     };
 
