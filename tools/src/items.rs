@@ -3,7 +3,7 @@ use ciborium::{de::from_reader, ser::into_writer};
 use serde::{Deserialize, Serialize};
 use wasm_minimal_protocol::*;
 
-#[derive(Deserialize,Debug)]
+#[derive(Deserialize)]
 pub struct RawItem {
     description: String,
     quantity: f32,
@@ -24,9 +24,13 @@ initiate_protocol!();
 
 #[wasm_func]
 pub fn preprocess_items(arg: &[u8]) -> Vec<u8> {
-    let raw_items: Vec<RawItem> = from_reader(arg).unwrap();
-
-    println!("{:?}", raw_items);
+    let raw_items: Vec<RawItem> = match from_reader(arg) {
+        Ok(items) => items,
+        Err(e) => {
+            eprintln!("{:?}", e);
+            return Vec::new();
+        }
+    };
 
     let items: Vec<Item> = raw_items
         .iter()
