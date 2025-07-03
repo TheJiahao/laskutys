@@ -5,6 +5,7 @@
 #import "components/item_row.typ": item_row
 #import "components/item_list.typ": item_list
 #import "components/header.typ": header
+#import "components/legal_entity.typ": legal_entity
 
 #let invoice(
   lang: "en",
@@ -36,15 +37,9 @@
     align: (left + top, right + top, right),
     gutter: 2em,
   )[
-    *#translate("purchaser")*\
-    #recipient.name\
-    #recipient.street\
-    #recipient.zip_code #recipient.city
+    #legal_entity(recipient, translate("purchaser"))
   ][
-    #seller.name\
-    #seller.business_id\
-    #seller.street\
-    #seller.zip_code #seller.city
+    #legal_entity(seller, "Seller")
   ][
     #image(logo, height: 5em)
   ]
