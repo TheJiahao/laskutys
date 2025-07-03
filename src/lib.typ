@@ -11,10 +11,10 @@
   currency: "€",
   date: datetime.today(),
   invoice_number: none,
+  logo: none,
   seller: (
     name: "Company Oy",
     business_id: "1234567-8",
-    logo: "logo.svg",
     street: "Street 123",
     zip_code: "01234",
     city: "City",
@@ -46,7 +46,7 @@
     #seller.street\
     #seller.zip_code #seller.city
   ][
-    #image(seller.logo, height: 5em)
+    #image(logo, height: 5em)
   ]
 
   item_list(preprocess_items(items), currency, lang)
