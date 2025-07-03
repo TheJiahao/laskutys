@@ -1,5 +1,10 @@
 use wasm_minimal_protocol::*;
 
+pub mod config;
+pub mod items;
+
+pub use crate::items::preprocess_items;
+
 initiate_protocol!();
 
 #[wasm_func]
