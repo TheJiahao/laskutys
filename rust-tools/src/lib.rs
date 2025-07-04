@@ -3,6 +3,7 @@ use wasm_minimal_protocol::*;
 
 pub mod config;
 pub mod items;
+pub mod utils;
 
 pub use crate::items::preprocess_items;
 
