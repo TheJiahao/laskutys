@@ -19,6 +19,10 @@ lint:
     cd rust-tools;\
     cargo clippy
 
+lint-fix:
+    cd rust-tools;\
+    cargo clippy --fix
+
 format:
     cd rust-tools;\
     cargo fmt
