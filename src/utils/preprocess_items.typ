@@ -1,8 +1,6 @@
-#import "../config.typ": DEFAULT_VAT_RATE
-
 #let preprocess_items(
   items,
-  default_vat_rate: DEFAULT_VAT_RATE,
+  default_vat_rate,
 ) = {
   items.map(item => {
     (

@@ -27,6 +27,8 @@
     city: "City",
   ),
   items,
+  // Default VAT rate
+  vat_rate: decimal("0.255"),
 ) = {
   set text(lang: lang)
 
@@ -45,5 +47,5 @@
     ],
   )
 
-  item_list(preprocess_items(items), currency, lang)
+  item_list(preprocess_items(items, vat_rate), currency, lang)
 }

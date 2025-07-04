@@ -1,1 +1,0 @@
-#let DEFAULT_VAT_RATE = 25.5

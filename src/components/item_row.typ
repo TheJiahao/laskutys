@@ -6,9 +6,9 @@
 
   (
     [#data.description],
-    [#strfmt("{:.2}", float(data.unit_price))],
+    [#strfmt("{:.2}", decimal(data.unit_price))],
     [#data.quantity],
-    [#strfmt("{:.2}", float(data.vat_rate))],
-    [#strfmt("{:.2}", float(data.total_price))],
+    [#strfmt("{:.2}", decimal(data.vat_rate) * 100)],
+    [#strfmt("{:.2}", decimal(data.total_price))],
   )
 }
