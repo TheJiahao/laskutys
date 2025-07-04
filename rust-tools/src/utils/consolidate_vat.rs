@@ -12,7 +12,12 @@ pub fn consolidate_vat(data: &[u8]) -> Result<Vec<u8>, CBORError> {
     let result = cbor_wrapper(data, |input: Vec<(String, String)>| {
         let decimals: Vec<(Decimal, Decimal)> = input
             .into_iter()
-            .map(|(a, b)| (Decimal::from_str(&a).unwrap(), Decimal::from_str(&b).unwrap()))
+            .map(|(a, b)| {
+                (
+                    Decimal::from_str(&a).unwrap(),
+                    Decimal::from_str(&b).unwrap(),
+                )
+            })
             .collect();
 
         Ok(calculate_vat(&decimals))
