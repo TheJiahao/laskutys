@@ -1,11 +1,8 @@
 use ciborium::{from_reader, into_writer};
 use wasm_minimal_protocol::*;
 
-pub mod config;
-pub mod items;
 pub mod utils;
 
-pub use crate::items::preprocess_items;
 pub use crate::utils::consolidate_vat;
 
 initiate_protocol!();
