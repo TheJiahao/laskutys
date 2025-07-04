@@ -1,9 +1,27 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, str::FromStr};
 
 use itertools::Itertools;
 use rust_decimal::Decimal;
+use wasm_minimal_protocol::{initiate_protocol, wasm_func};
 
-fn consolidate_vat(data: &[(Decimal, Decimal)]) -> HashMap<Decimal, Decimal> {
+use crate::utils::cbor_wrapper::{CBORError, cbor_wrapper};
+
+initiate_protocol!();
+#[wasm_func]
+pub fn consolidate_vat(data: &[u8]) -> Result<Vec<u8>, CBORError> {
+    let result = cbor_wrapper(data, |input: Vec<(String, String)>| {
+        let decimals: Vec<(Decimal, Decimal)> = input
+            .into_iter()
+            .map(|(a, b)| (Decimal::from_str(&a).unwrap(), Decimal::from_str(&b).unwrap()))
+            .collect();
+
+        Ok(calculate_vat(&decimals))
+    })?;
+
+    Ok(result)
+}
+
+fn calculate_vat(data: &[(Decimal, Decimal)]) -> HashMap<Decimal, Decimal> {
     data.iter()
         .into_group_map_by(|(vat_rate, _)| vat_rate)
         .into_iter()
@@ -37,6 +55,6 @@ mod tests {
         #[case] data: &[(Decimal, Decimal)],
         #[case] expected: HashMap<Decimal, Decimal>,
     ) {
-        assert_eq!(consolidate_vat(data), expected)
+        assert_eq!(calculate_vat(data), expected)
     }
 }

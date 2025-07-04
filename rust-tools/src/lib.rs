@@ -6,6 +6,7 @@ pub mod items;
 pub mod utils;
 
 pub use crate::items::preprocess_items;
+pub use crate::utils::consolidate_vat;
 
 initiate_protocol!();
 
