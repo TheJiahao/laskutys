@@ -1,11 +1,11 @@
 build:
     cd rust-tools;\
-    cargo --color=always build --release --target wasm32-unknown-unknown;\
+    cargo build --release --target wasm32-unknown-unknown;\
     cp target/wasm32-unknown-unknown/release/rust_tools.wasm rust_tools.wasm;
 
 dev:
     cd rust-tools;\
-    cargo --color=always build --target wasm32-unknown-unknown;\
+    cargo build --target wasm32-unknown-unknown;\
     cp target/wasm32-unknown-unknown/debug/rust_tools.wasm rust_tools.wasm;
 
 install-dev-deps:
@@ -13,16 +13,16 @@ install-dev-deps:
 
 test:
     cd rust-tools;\
-    cargo --color=always test
+    cargo test
 
 lint:
     cd rust-tools;\
-    cargo --color=always clippy
+    cargo clippy
 
 lint-fix:
     cd rust-tools;\
-    cargo --color=always clippy --fix
+    cargo clippy --fix
 
 format:
     cd rust-tools;\
-    cargo --color=always fmt
+    cargo fmt
