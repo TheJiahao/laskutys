@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  format:
-    name: Format
+  lint-format:
+    name: Lint and format
     runs-on: ubuntu-latest
 
     permissions:
@@ -14,7 +14,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup
+      - name: Install Just
+        uses: baptiste0928/cargo-install@v3
+        with:
+          crate: just
+        
+      - name: Install Rust tools
+        run: just install-dev-deps
+
+      - name: Lint
+        run: just lint-fix
+      
+      - name: Format
+        run: just format
+
+      - name: Install Typstyle
         uses: baptiste0928/cargo-install@v3
         with:
           crate: typstyle
