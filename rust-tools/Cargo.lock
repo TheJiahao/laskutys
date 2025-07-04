@@ -70,6 +70,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust-tools"
+version = "0.1.0"
+dependencies = [
+ "ciborium",
+ "serde",
+ "wasm-minimal-protocol",
+]
+
+[[package]]
 name = "serde"
 version = "1.0.219"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -98,15 +107,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
-]
-
-[[package]]
-name = "tools"
-version = "0.1.0"
-dependencies = [
- "ciborium",
- "serde",
- "wasm-minimal-protocol",
 ]
 
 [[package]]

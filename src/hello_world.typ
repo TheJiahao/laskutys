@@ -1,4 +1,4 @@
-#import plugin("/tools/tools.wasm"): hello_list, hello_world
+#import plugin("/rust-tools/rust_tools.wasm"): hello_list, hello_world
 #import "/src/utils/call_wasm.typ": call_wasm
 
 #str(hello_world())
