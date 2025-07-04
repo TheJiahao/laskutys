@@ -12,10 +12,13 @@ install-dev-deps:
     rustup component add rustfmt clippy
 
 test:
+    cd rust-tools;\
     cargo test
 
 lint:
+    cd rust-tools;\
     cargo clippy
 
 format:
+    cd rust-tools;\
     cargo fmt
