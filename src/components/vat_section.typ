@@ -27,6 +27,11 @@
 #let get_sum_row(data) = {
   let sum_row = data
     .map((((_, ..other)) => other))
+    .map(((vat, total_with_vat, total_without_vat)) => (
+      total_without_vat,
+      vat,
+      total_with_vat,
+    ))
     .reduce((accumulated, row) => range(0, 3).map(i => (
       accumulated.at(i) + row.at(i)
     )))
@@ -53,5 +58,6 @@
       vat_row(..entry)
     },
     [Total],
+    ..sum_row,
   )
 }
