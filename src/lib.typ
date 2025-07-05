@@ -5,11 +5,14 @@
 #import "components/header.typ": header
 #import "components/legal_entity.typ": legal_entity
 #import "components/vat_section.typ": vat_section
+#import "components/payment_info.typ": payment_info
 
 #let invoice(
   lang: "en",
   currency: "€",
   date: datetime.today(),
+  // Days to due date
+  payment_terms: 14,
   invoice_number: none,
   logo: none,
   seller: (
@@ -25,9 +28,11 @@
     zip_code: "01234",
     city: "City",
   ),
-  items,
   // Default VAT rate
   vat_rate: decimal("0.255"),
+  payment: none,
+  reference_number: none,
+  items,
 ) = {
   set text(lang: lang)
 
@@ -47,7 +52,15 @@
   )
 
   let items = preprocess_items(items, vat_rate)
+  let sum = items.map(item => item.at("total_price")).sum()
 
   item_list(items, currency)
   vat_section(items, currency)
+  payment_info(
+    seller.name,
+    sum,
+    currency,
+    payment,
+    date + duration(days: payment_terms),
+  )
 }
