@@ -1,7 +1,7 @@
 #import "@preview/oxifmt:1.0.0": strfmt
 #import "/src/utils/get_decimal_separator.typ": get_decimal_separator
 
-#let vat_row(vat_rate, vat, total_without_vat, total_with_vat, lang) = {
+#let vat_row(vat_rate, vat, total_with_vat, total_without_vat, lang) = {
   let strfmt = strfmt.with(fmt-decimal-separator: get_decimal_separator(lang))
 
   (

@@ -6,6 +6,7 @@
 #import "components/item_list.typ": item_list
 #import "components/header.typ": header
 #import "components/legal_entity.typ": legal_entity
+#import "components/vat_section.typ": vat_section
 
 #let invoice(
   lang: "en",
@@ -50,4 +51,5 @@
   let items = preprocess_items(items, vat_rate)
 
   item_list(items, currency, lang)
+  vat_section(items,currency, lang)
 }
