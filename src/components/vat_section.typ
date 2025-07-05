@@ -54,7 +54,7 @@
     ..for entry in result {
       vat_row(..entry)
     },
-    [Total],
-    ..sum_row,
+    strong(translate("total")),
+    ..sum_row.map(strong),
   )
 }
