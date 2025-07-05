@@ -47,5 +47,7 @@
     ],
   )
 
-  item_list(preprocess_items(items, vat_rate), currency, lang)
+  let items = preprocess_items(items, vat_rate)
+
+  item_list(items, currency, lang)
 }
