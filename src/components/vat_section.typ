@@ -1,0 +1,1 @@
+#let vat_section() = {}
