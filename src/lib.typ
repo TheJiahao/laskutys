@@ -1,7 +1,5 @@
 #import "utils/translate.typ": translate
 #import "utils/preprocess_items.typ": preprocess_items
-#import "@preview/oxifmt:1.0.0": strfmt
-#import "utils/get_decimal_separator.typ": get_decimal_separator
 #import "components/item_row.typ": item_row
 #import "components/item_list.typ": item_list
 #import "components/header.typ": header
