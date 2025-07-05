@@ -48,6 +48,6 @@
 
   let items = preprocess_items(items, vat_rate)
 
-  item_list(items, currency, lang)
-  vat_section(items,currency, lang)
+  item_list(items, currency)
+  vat_section(items,currency)
 }

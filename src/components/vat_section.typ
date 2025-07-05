@@ -3,7 +3,7 @@
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/utils/translate.typ": translate
 
-#let vat_section(items, currency, lang) = {
+#let vat_section(items, currency) = {
   let items = items.map(((vat_rate, total_price)) => (
     vat_rate,
     total_price,
@@ -39,7 +39,7 @@
     ),
 
     ..for entry in result {
-      vat_row(..entry, lang)
+      vat_row(..entry)
     },
     [Total],
   )

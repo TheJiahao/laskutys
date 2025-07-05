@@ -1,7 +1,7 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/components/item_row.typ": item_row
 
-#let item_list(items, currency, lang) = {
+#let item_list(items, currency) = {
   table(
     columns: (2fr, 1fr, 1fr, 1fr, 1fr),
     align: (left, right, right, right, right),
@@ -16,7 +16,7 @@
     ),
 
     ..for item in items {
-      item_row(item, lang)
+      item_row(item)
     },
   )
 }
