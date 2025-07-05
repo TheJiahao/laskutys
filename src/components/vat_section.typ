@@ -3,7 +3,7 @@
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/utils/translate.typ": translate
 
-#let vat_section(items, currency) = {
+#let preprocess(items) = {
   let items = items.map(((vat_rate, total_price)) => (
     vat_rate,
     total_price,
@@ -19,13 +19,25 @@
 
       (vat_rate, vat, total_with_vat, total_without_vat)
     })
-  let sum_row = result.fold((0, 0, 0), (accumulated, row) => {
+
+  result
+}
+
+#let get_sum_row(data) = {
+  let sum_row = data.fold((0, 0, 0), (accumulated, row) => {
     (
       accumulated.at(0) + row.at(0),
       accumulated.at(1) + row.at(1),
       accumulated.at(1) + row.at(2),
     )
   })
+
+  sum_row
+}
+
+#let vat_section(items, currency) = {
+  let result = preprocess(items)
+  let sum_row = get_sum_row(result)
 
   table(
     columns: (1fr, 1fr, 1fr, 1fr),
