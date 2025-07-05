@@ -93,6 +93,9 @@ jobs:
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
+      - name: Add WASM target
+        run: rustup target add wasm32-unknown-unknown
+
       - name: Install Just
         uses: baptiste0928/cargo-install@v3
         with:
