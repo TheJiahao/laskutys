@@ -2,6 +2,10 @@
 
 A Typst template for Finnish invoice
 
+> [!NOTE]
+> VAT-calculation might have rounding errors due to division.
+> The errors are at most some cents.
+
 Data format YAML:
 
 ```yaml
