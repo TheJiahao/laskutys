@@ -2,6 +2,7 @@
 #import "/src/components/vat_row.typ": vat_row
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/utils/translate.typ": translate
+#import "/src/utils/formatter.typ": formatter
 
 #let preprocess(items) = {
   let items = items.map(((vat_rate, total_price)) => (
@@ -24,15 +25,13 @@
 }
 
 #let get_sum_row(data) = {
-  let sum_row = data.fold((0, 0, 0), (accumulated, row) => {
-    (
-      accumulated.at(0) + row.at(0),
-      accumulated.at(1) + row.at(1),
-      accumulated.at(1) + row.at(2),
-    )
-  })
+  let sum_row = data
+    .map((((_, ..other)) => other))
+    .reduce((accumulated, row) => range(0, 3).map(i => (
+      accumulated.at(i) + row.at(i)
+    )))
 
-  sum_row
+  sum_row.map(x => formatter("{:.2}", x))
 }
 
 #let vat_section(items, currency) = {
