@@ -49,7 +49,10 @@
     reference_number = call_wasm(generate_reference_number, invoice_number)
   }
 
-  assert(call_wasm(check_reference_number, reference_number))
+  assert(
+    call_wasm(check_reference_number, reference_number),
+    message: "Invalid reference number",
+  )
 
   let items = preprocess_items(items, vat_rate)
   let sum = items.map(item => item.at("total_price")).sum()
