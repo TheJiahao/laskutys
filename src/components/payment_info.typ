@@ -13,6 +13,7 @@
 ) = {
   assert(type(recipient) == str)
   assert(type(amount) == decimal)
+  assert(type(currency) == str)
   assert(type(payment) == dictionary)
   assert(type(due_date) == datetime)
   assert(type(reference_number) == str)
