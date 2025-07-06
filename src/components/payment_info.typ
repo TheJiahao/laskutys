@@ -1,6 +1,6 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/utils/formatter.typ": formatter
-#import plugin("/rust-tools/rust_tools.wasm"): check_reference_number, iban
+#import plugin("/rust_tools/rust_tools.wasm"): check_reference_number, iban
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/config.typ": CURRENCY
 

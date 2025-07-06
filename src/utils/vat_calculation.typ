@@ -1,4 +1,4 @@
-#import plugin("/rust-tools/rust_tools.wasm"): consolidate_vat
+#import plugin("/rust_tools/rust_tools.wasm"): consolidate_vat
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/utils/formatter.typ": formatter
 

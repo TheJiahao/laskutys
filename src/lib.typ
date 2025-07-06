@@ -7,7 +7,7 @@
 #import "components/vat_section.typ": vat_section
 #import "components/payment_info.typ": payment_info
 #import "utils/generate_invoice_number.typ": generate_invoice_number
-#import plugin("/rust-tools/rust_tools.wasm"): generate_reference_number
+#import plugin("/rust_tools/rust_tools.wasm"): generate_reference_number
 #import "utils/call_wasm.typ": call_wasm
 
 #let invoice(

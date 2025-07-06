@@ -1,4 +1,4 @@
-#import plugin("/rust-tools/rust_tools.wasm"): (
+#import plugin("/rust_tools/rust_tools.wasm"): (
   check_reference_number, consolidate_vat, generate_bank_barcode,
   generate_reference_number,
 )
