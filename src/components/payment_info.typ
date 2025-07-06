@@ -11,6 +11,7 @@
   payment,
   due_date,
   reference_number,
+  barcode: true,
 ) = {
   assert(type(recipient) == str)
   assert(type(amount) == decimal)
@@ -48,7 +49,9 @@
     ),
   )
 
-  v(1fr)
+  if barcode {
+    v(1fr)
 
-  bank_barcode(amount, iban, reference_number, due_date)
+    bank_barcode(amount, iban, reference_number, due_date)
+  }
 }

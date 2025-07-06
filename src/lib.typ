@@ -34,6 +34,7 @@
   vat_rate: decimal("0.255"),
   payment: none,
   reference_number: auto,
+  barcode: true,
   items,
 ) = {
   set text(lang: lang)
@@ -73,5 +74,6 @@
     payment,
     due_date,
     reference_number,
+    barcode: barcode,
   )
 }
