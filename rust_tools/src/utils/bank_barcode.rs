@@ -1,5 +1,5 @@
 use bank_barcode::{Barcode, BuilderError};
-use rust_decimal::Decimal;
+use rust_decimal::{Decimal, RoundingStrategy::MidpointAwayFromZero};
 use wasm_minimal_protocol::{initiate_protocol, wasm_func};
 
 use crate::utils::cbor_wrapper::{CBORError, cbor_wrapper};
@@ -42,6 +42,13 @@ fn get_barcode(
 
     Ok(Barcode::builder()
         .euros(amount.trunc().to_u32().unwrap())
+        .cents(
+            amount
+                .fract()
+                .round_dp_with_strategy(2, MidpointAwayFromZero)
+                .to_u8()
+                .unwrap(),
+        )
         .reference(reference_number)
         .account_number(iban)
         .calendar_due_date(year, month, day)
