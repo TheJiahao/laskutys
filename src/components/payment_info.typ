@@ -3,6 +3,7 @@
 #import plugin("/rust-tools/rust_tools.wasm"): check_reference_number
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/config.typ": CURRENCY
+#import "@preview/ibanator:0.1.0": iban
 
 #let payment_info(
   recipient,
@@ -33,7 +34,7 @@
       columns: 2,
       translate("recipient"), recipient,
       translate("bank"), payment.bank,
-      [IBAN], payment.iban,
+      [IBAN], iban(payment.iban),
       [BIC], payment.bic,
       translate("reference_number"), reference_number,
     ),
