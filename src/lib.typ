@@ -7,9 +7,7 @@
 #import "components/vat_section.typ": vat_section
 #import "components/payment_info.typ": payment_info
 #import "utils/generate_invoice_number.typ": generate_invoice_number
-#import plugin("/rust-tools/rust_tools.wasm"): (
-  check_reference_number, generate_reference_number,
-)
+#import plugin("/rust-tools/rust_tools.wasm"): generate_reference_number
 #import "utils/call_wasm.typ": call_wasm
 
 #let invoice(
@@ -48,11 +46,6 @@
   if reference_number == auto {
     reference_number = call_wasm(generate_reference_number, invoice_number)
   }
-
-  assert(
-    call_wasm(check_reference_number, reference_number),
-    message: "Invalid reference number",
-  )
 
   let items = preprocess_items(items, vat_rate)
   let sum = items.map(item => item.at("total_price")).sum()

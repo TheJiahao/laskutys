@@ -1,5 +1,7 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/utils/formatter.typ": formatter
+#import plugin("/rust-tools/rust_tools.wasm"): check_reference_number
+#import "/src/utils/call_wasm.typ": call_wasm
 
 #let payment_info(
   recipient,
@@ -9,6 +11,11 @@
   due_date,
   reference_number,
 ) = {
+  assert(
+    call_wasm(check_reference_number, reference_number),
+    message: "Invalid reference number",
+  )
+
   grid(
     columns: (1fr, 1fr),
     align: (left, right),
