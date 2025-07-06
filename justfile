@@ -12,8 +12,8 @@ install-dev-deps:
     rustup component add rustfmt clippy
 
 test:
-    cd rust-tols;\
     tt run
+    cd rust-tools;\
     cargo test
 
 lint:
