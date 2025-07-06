@@ -5,10 +5,13 @@
   assert(type(default_vat_rate) == decimal)
 
   for item in items {
-    assert(
-      type(item.vat_rate) in (str, decimal),
-      message: "Use decimal or str in vat_rate of items",
-    )
+    if "vat_rate" in items {
+      assert(
+        type(item.vat_rate) in (str, decimal),
+        message: "Use decimal or str in vat_rate of items",
+      )
+    }
+
     assert(
       type(item.unit_price) in (str, decimal, int),
       message: "Use decimal, str or int in unit_price of items",
