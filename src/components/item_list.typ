@@ -4,11 +4,15 @@
 
 #let item_list(items) = {
   table(
-    columns: (2fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (3fr, auto, auto, auto, 1.5fr),
     align: (left, right, right, right, right),
+    fill: (_, y) => if y == 0 { gray.lighten(70%) },
+    stroke: none,
+    inset: 0.5em,
+
     table.header(
       translate("item"),
-      translate("unit_price"),
+      [#translate("unit_price") (#CURRENCY)],
       translate(
         "quantity",
       ),
