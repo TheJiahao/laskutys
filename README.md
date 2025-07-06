@@ -33,3 +33,8 @@ Data format YAML:
 > [!IMPORTANT]
 > Pass `unit_price` and `vat_rate` as string, so that they can be converted to decimal without errors.
 > This avoids rounding errors due to imprecision of floating-point numbers.
+
+## License
+
+The project is licensed under [MIT-license](/LICENSE).
+Licenses of libraries used in this project are listed in [/licenses](/licenses/).
