@@ -1,10 +1,10 @@
 [package]
-name = "finnish-invoice"
+name = "lasku"
 version = "0.1.0"
 entrypoint = "src/lib.typ"
 authors = ["Jiahao Li"]
 description = "A template for making invoices matching Finnish requirements (VH/3634/00.01.00/2023)."
-repository = "https://github.com/TheJiahao/finnish-invoice"
+repository = "https://github.com/TheJiahao/typst-finnish-invoice"
 keywords = ["invoice", "finnish", "banking", "accounting"]
 compiler = "0.13.1"
 license = "MIT"
