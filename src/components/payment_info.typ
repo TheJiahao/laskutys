@@ -11,6 +11,16 @@
   due_date,
   reference_number,
 ) = {
+  assert(type(recipient) == str)
+  assert(type(amount) == decimal)
+  assert(type(payment) == dictionary)
+  assert(type(due_date) == datetime)
+  assert(type(reference_number) == str)
+
+  assert("bank" in payment, message: "Missing bank")
+  assert("iban" in payment, message: "Missing IBAN")
+  assert("bic" in payment, message: "Missing BIC")
+
   assert(
     call_wasm(check_reference_number, reference_number),
     message: "Invalid reference number",
