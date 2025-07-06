@@ -13,6 +13,7 @@ itertools = "0.14.0"
 serde = "1.0.219"
 wasm-minimal-protocol = "0.1.0"
 iso_11649 = "0.1.2"
+iban = "0.2.0"
 
 [profile.release]
 lto = true
