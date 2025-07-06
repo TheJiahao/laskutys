@@ -13,6 +13,8 @@
 #let invoice(
   lang: "en",
   date: datetime.today(),
+  // Contact information, displayd as is
+  contacts: [],
   // Days to due date
   payment_terms: 14,
   invoice_number: auto,
@@ -42,6 +44,7 @@
   items,
 ) = {
   set text(lang: lang)
+  set page(footer: contacts)
 
   if invoice_number == auto {
     invoice_number = get_invoice_number(date)

@@ -9,5 +9,6 @@
   iban: "FI2112345600000785",
   bic: "OKOYFIHH",
   lang: "fi",
+  contacts: [Company Oy, Phone: +358 123 4567, Email: sales.person\@company.com],
   data,
 )
