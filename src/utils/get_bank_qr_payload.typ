@@ -31,7 +31,7 @@
     reference_number.replace(" ", ""),
     "",
     due_date.display(
-      "ReqdExctnDt/[year padding:zero]-[month padding:zero]-[day padding:zero]",
+      "ReqdExctnDt/[year]-[month padding:zero]-[day padding:zero]",
     ),
   ).join("\n")
 }
