@@ -38,17 +38,41 @@
 
   let iban = call_wasm(iban_constructor, iban)
 
-  grid(
-    columns: (1fr, 1fr, 1fr),
-    align: (left, center, right),
-    table(
+
+  box(stroke: black, radius: 0.5em, inset: 2em, grid(
+    columns: (5fr, 3fr),
+    align: (left, right),
+    column-gutter: 1em,
+
+    grid(
       columns: 2,
-      translate("beneficiary"), beneficiary,
-      [IBAN], iban,
-      [BIC], bic,
-      translate("reference_number"), reference_number,
+      row-gutter: 0.5em,
+      column-gutter: 1em,
+      [#translate("beneficiary"):], beneficiary,
+      [IBAN:], iban,
+      [BIC:], bic,
+      [#translate("reference_number"):], reference_number,
     ),
-    if qrcode {
+
+    grid(
+      columns: 2,
+      column-gutter: 1em,
+      row-gutter: 0.5em,
+      [#translate("to_pay"):], [*#formatter("{:.2}", amount) #CURRENCY*],
+      [#translate("due_date"):],
+      due_date.display("[year]-[month padding:zero]-[day padding:zero]"),
+    ),
+
+    grid.cell(align: left + bottom, if barcode {
+      bank_barcode(
+        amount,
+        iban,
+        reference_number,
+        due_date,
+      )
+    }),
+
+    grid.cell(align: right + bottom, if qrcode {
       bank_qr_code(
         amount,
         beneficiary,
@@ -57,16 +81,6 @@
         reference_number,
         due_date,
       )
-    },
-    table(
-      columns: 2,
-      translate("to_pay"), [*#formatter("{:.2}", amount) #CURRENCY*],
-      translate("due_date"),
-      due_date.display("[year]-[month padding:zero]-[day padding:zero]"),
-    ),
-  )
-
-  if barcode {
-    bank_barcode(amount, iban, reference_number, due_date)
-  }
+    }),
+  ))
 }
