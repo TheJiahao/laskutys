@@ -18,8 +18,8 @@
     due_date.month(),
     due_date.day(),
   ))
-  scale(x: 90mm, y: auto, code128(barcode, options: (
+  code128(barcode, options: (
     height: 33.0,
     text-gap: 10.0,
-  )))
+  ))
 }
