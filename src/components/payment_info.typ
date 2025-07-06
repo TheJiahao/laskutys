@@ -9,24 +9,27 @@
 #import "/src/components/bank_qrcode.typ": bank_qr_code
 
 #let payment_info(
-  beneficiary,
-  amount,
+  beneficiary: none,
+  amount: none,
   iban: none,
   bic: none,
-  due_date,
-  reference_number,
+  due_date: none,
+  reference_number: none,
   // Show bank barcode
   barcode: true,
   // Show EPC QR code
   qrcode: true,
 ) = {
-  assert(type(beneficiary) == str)
-  assert(type(amount) == decimal)
-  assert(type(due_date) == datetime)
-  assert(type(reference_number) == str)
-
+  assert(beneficiary != none, message: "Missing beneficiary")
+  assert(amount != none, message: "Missing amount")
+  assert(due_date != none, message: "Missing due date")
+  assert(reference_number != none, message: "Missing reference number")
   assert(iban != none, message: "Missing IBAN")
   assert(bic != none, message: "Missing BIC")
+
+  assert(amount != none, message: "Missing amount")
+  assert(type(amount) == decimal, message: "Pass amount as decimal")
+  assert(amount > decimal("0"), message: "Amount must be greater than zero")
 
   assert(
     call_wasm(check_reference_number, reference_number),

@@ -73,10 +73,10 @@
   item_list(items)
   vat_section(items)
   payment_info(
-    seller.name,
-    sum,
-    due_date,
-    reference_number,
+    beneficiary: seller.name,
+    amount: sum,
+    due_date: due_date,
+    reference_number: reference_number,
     iban: iban,
     bic: bic,
     barcode: barcode,
