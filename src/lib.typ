@@ -41,6 +41,8 @@
     invoice_number = generate_invoice_number(date)
   }
 
+  let items = preprocess_items(items, vat_rate)
+  let sum = items.map(item => item.at("total_price")).sum()
 
   header(invoice_number, date)
 
@@ -56,9 +58,6 @@
       #legal_entity(seller, translate("seller"))
     ],
   )
-
-  let items = preprocess_items(items, vat_rate)
-  let sum = items.map(item => item.at("total_price")).sum()
 
   item_list(items, currency)
   vat_section(items, currency)
