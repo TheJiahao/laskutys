@@ -9,6 +9,8 @@ keywords = ["invoice", "finnish", "banking", "accounting"]
 compiler = "0.13.1"
 license = "MIT"
 categories = ["office"]
+disciplines = ["business"]
+exclude = ["tests/**", ".vscode/**","rust-tools/target/**"]
 
 [template]
 path = "template"
