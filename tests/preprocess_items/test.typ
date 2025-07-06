@@ -34,7 +34,7 @@
 )
 
 #assert(
-  preprocess_items(data_with_vat, decimal(0.14)).all(item => (
+  preprocess_items(data_with_vat, decimal("0.14")).all(item => (
     item.total_price == decimal(item.unit_price) * decimal(item.quantity)
   )),
   message: "Total price is calculated",
