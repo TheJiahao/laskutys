@@ -76,5 +76,6 @@
     due_date,
     reference_number,
     barcode: barcode,
+    qrcode: qrcode,
   )
 }
