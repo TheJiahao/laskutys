@@ -59,7 +59,7 @@
       columns: 2,
       translate("to_pay"), [*#formatter("{:.2}", amount) #CURRENCY*],
       translate("due_date"),
-      due_date.display("[day padding:zero].[month padding:zero].[year]"),
+      due_date.display("[year]-[month padding:zero]-[day padding:zero]"),
     ),
   )
 
