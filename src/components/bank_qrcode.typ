@@ -1,5 +1,6 @@
 #import "@preview/oxifmt:1.0.0": strfmt
 #import "@preview/tiaoma:0.3.0": qrcode
+#import "/src/utils/get_bank_qr_payload.typ": get_bank_qr_payload
 
 #let bank_qr_code(amount, recipient, iban, bic, reference_number, due_date) = {
   assert(
@@ -11,22 +12,14 @@
     message: "Amount must be between 0.01 and 999999999.99",
   )
 
-  let payload = (
-    "BCD",
-    "001",
-    "1",
-    "SCT",
-    bic,
+  let payload = get_bank_qr_payload(
+    amount,
     recipient,
-    iban.replace(" ", ""),
-    strfmt("EUR{:.2}", amount, decimal_separator: "."),
-    "",
-    reference_number.replace(" ", ""),
-    "",
-    due_date.display(
-      "ReqdExctnDt/[year padding:zero]-[month padding:zero]-[day padding:zero]",
-    ),
-  ).join("\n")
+    iban,
+    bic,
+    reference_number,
+    due_date,
+  )
 
   qrcode(payload, options: (
     // error level M
