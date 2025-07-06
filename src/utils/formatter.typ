@@ -8,10 +8,15 @@
 
 #let formatter(
   format,
+  decimal_separator: auto,
   ..replacements,
 ) = context {
-  strfmt(format, ..replacements, fmt-decimal-separator: get_decimal_separator(
-    text.lang,
-  ))
+  let fmt_decimal_separator = if decimal_separator == auto {
+    get_decimal_separator(
+      text.lang,
+    )
+  } else { decimal_separator }
+
+  strfmt(format, ..replacements, fmt-decimal-separator: fmt_decimal_separator)
 }
 
