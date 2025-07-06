@@ -33,7 +33,7 @@
   font: auto,
   items,
 ) = {
-  set text(lang: lang)
+  set text(lang: lang, size: 12pt)
   set text(font: font) if (font != auto)
   set page(footer: contacts)
 
