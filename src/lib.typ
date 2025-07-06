@@ -12,7 +12,6 @@
 
 #let invoice(
   lang: "en",
-  currency: "€",
   date: datetime.today(),
   // Days to due date
   payment_terms: 14,
@@ -66,12 +65,11 @@
     ],
   )
 
-  item_list(items, currency)
-  vat_section(items, currency)
+  item_list(items)
+  vat_section(items)
   payment_info(
     seller.name,
     sum,
-    currency,
     payment,
     due_date,
     reference_number,

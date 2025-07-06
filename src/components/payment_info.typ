@@ -2,18 +2,17 @@
 #import "/src/utils/formatter.typ": formatter
 #import plugin("/rust-tools/rust_tools.wasm"): check_reference_number
 #import "/src/utils/call_wasm.typ": call_wasm
+#import "/src/config.typ": CURRENCY
 
 #let payment_info(
   recipient,
   amount,
-  currency,
   payment,
   due_date,
   reference_number,
 ) = {
   assert(type(recipient) == str)
   assert(type(amount) == decimal)
-  assert(type(currency) == str)
   assert(type(payment) == dictionary)
   assert(type(due_date) == datetime)
   assert(type(reference_number) == str)
@@ -40,7 +39,7 @@
     ),
     table(
       columns: 2,
-      translate("to_pay"), [*#formatter("{:.2}", amount) #currency*],
+      translate("to_pay"), [*#formatter("{:.2}", amount) #CURRENCY*],
       translate("due_date"),
       due_date.display("[day padding:zero].[month padding:zero].[year]"),
     ),
