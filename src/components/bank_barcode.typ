@@ -1,0 +1,20 @@
+#import plugin("/rust_tools/rust_tools.wasm"): generate_bank_barcode
+#import "/src/utils/call_wasm.typ": call_wasm
+#import "@preview/tiaoma:0.3.0": code128
+
+#let bank_barcode(amount, iban, reference_number, due_date) = {
+  assert(type(due_date) == datetime)
+
+  let barcode = call_wasm(generate_bank_barcode, (
+    str(amount),
+    iban,
+    reference_number.replace(" ", ""),
+    due_date.year(),
+    due_date.month(),
+    due_date.day(),
+  ))
+  scale(x: 105mm, y: auto, code128(barcode, options: (
+    height: 33.0,
+    text-gap: 10.0,
+  )))
+}
