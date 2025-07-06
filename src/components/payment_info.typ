@@ -1,9 +1,8 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/utils/formatter.typ": formatter
-#import plugin("/rust-tools/rust_tools.wasm"): check_reference_number
+#import plugin("/rust-tools/rust_tools.wasm"): check_reference_number, iban
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/config.typ": CURRENCY
-#import "@preview/ibanator:0.1.0": iban
 
 #let payment_info(
   recipient,
@@ -34,7 +33,7 @@
       columns: 2,
       translate("recipient"), recipient,
       translate("bank"), payment.bank,
-      [IBAN], iban(payment.iban),
+      [IBAN], call_wasm(iban, payment.iban),
       [BIC], payment.bic,
       translate("reference_number"), reference_number,
     ),
