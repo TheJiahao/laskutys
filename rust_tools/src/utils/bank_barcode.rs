@@ -7,7 +7,7 @@ use crate::utils::cbor_wrapper::{CBORError, cbor_wrapper};
 initiate_protocol!();
 
 #[wasm_func]
-pub fn generate_bank_barcode(data: &[u8]) -> Result<Vec<u8>, CBORError> {
+pub fn get_bank_barcode(data: &[u8]) -> Result<Vec<u8>, CBORError> {
     cbor_wrapper(
         data,
         |(amount, iban, reference_number, year, month, day): (

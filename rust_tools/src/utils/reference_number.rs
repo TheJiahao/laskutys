@@ -6,7 +6,7 @@ use wasm_minimal_protocol::{initiate_protocol, wasm_func};
 initiate_protocol!();
 
 #[wasm_func]
-pub fn generate_reference_number(data: &[u8]) -> Result<Vec<u8>, CBORError> {
+pub fn get_reference_number(data: &[u8]) -> Result<Vec<u8>, CBORError> {
     cbor_wrapper(data, |reference_number: String| {
         Ok(RfCreditorReference::new(&reference_number).to_string())
     })

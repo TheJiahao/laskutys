@@ -1,4 +1,4 @@
-#import plugin("/rust_tools/rust_tools.wasm"): generate_bank_barcode
+#import plugin("/rust_tools/rust_tools.wasm"): get_bank_barcode
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "@preview/tiaoma:0.3.0": code128
 
@@ -10,7 +10,7 @@
     message: "Bank barcode supports only Finnish IBAN",
   )
 
-  let barcode = call_wasm(generate_bank_barcode, (
+  let barcode = call_wasm(get_bank_barcode, (
     str(amount),
     iban,
     reference_number.replace(" ", ""),
