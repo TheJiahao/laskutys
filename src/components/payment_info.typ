@@ -12,8 +12,10 @@
   payment,
   due_date,
   reference_number,
-  qrcode: true,
+  // Show bank barcode
   barcode: true,
+  // Show EPC QR code
+  qrcode: true,
 ) = {
   assert(type(beneficiary) == str)
   assert(type(amount) == decimal)

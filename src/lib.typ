@@ -34,7 +34,9 @@
   vat_rate: decimal("0.255"),
   payment: none,
   reference_number: auto,
+  // Show bank barcode
   barcode: true,
+  // Show EPC QR code
   qrcode: true,
   items,
 ) = {
