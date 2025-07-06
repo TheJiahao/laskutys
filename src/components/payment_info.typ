@@ -23,7 +23,6 @@
   assert(type(due_date) == datetime)
   assert(type(reference_number) == str)
 
-  assert("bank" in payment, message: "Missing bank")
   assert("iban" in payment, message: "Missing IBAN")
   assert("bic" in payment, message: "Missing BIC")
 
@@ -40,7 +39,6 @@
     table(
       columns: 2,
       translate("beneficiary"), beneficiary,
-      translate("bank"), payment.bank,
       [IBAN], iban,
       [BIC], payment.bic,
       translate("reference_number"), reference_number,

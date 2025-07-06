@@ -8,7 +8,6 @@
   logo: "logo.svg",
   payment: (
     iban: "FI2112345600000785",
-    bank: "Osuuspankki",
     bic: "OKOYFIHH",
   ),
   lang: "fi",
