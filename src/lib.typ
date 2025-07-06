@@ -32,7 +32,8 @@
   ),
   // Default VAT rate
   vat_rate: decimal("0.255"),
-  payment: none,
+  iban: none,
+  bic: none,
   reference_number: auto,
   // Show bank barcode
   barcode: true,
@@ -74,9 +75,10 @@
   payment_info(
     seller.name,
     sum,
-    payment,
     due_date,
     reference_number,
+    iban: iban,
+    bic: bic,
     barcode: barcode,
     qrcode: qrcode,
   )

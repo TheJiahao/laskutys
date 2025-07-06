@@ -6,10 +6,8 @@
   date: datetime(year: 2025, month: 1, day: 1),
   invoice_number: "0123456",
   logo: "logo.svg",
-  payment: (
-    iban: "FI2112345600000785",
-    bic: "OKOYFIHH",
-  ),
+  iban: "FI2112345600000785",
+  bic: "OKOYFIHH",
   lang: "fi",
   data,
 )

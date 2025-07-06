@@ -1,6 +1,8 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/utils/formatter.typ": formatter
-#import plugin("/rust_tools/rust_tools.wasm"): check_reference_number, iban
+#import plugin("/rust_tools/rust_tools.wasm"): (
+  check_reference_number, iban as iban_constructor,
+)
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/config.typ": CURRENCY
 #import "/src/components/bank_barcode.typ": bank_barcode
@@ -9,7 +11,8 @@
 #let payment_info(
   beneficiary,
   amount,
-  payment,
+  iban: none,
+  bic: none,
   due_date,
   reference_number,
   // Show bank barcode
@@ -19,19 +22,18 @@
 ) = {
   assert(type(beneficiary) == str)
   assert(type(amount) == decimal)
-  assert(type(payment) == dictionary)
   assert(type(due_date) == datetime)
   assert(type(reference_number) == str)
 
-  assert("iban" in payment, message: "Missing IBAN")
-  assert("bic" in payment, message: "Missing BIC")
+  assert(iban != none, message: "Missing IBAN")
+  assert(bic != none, message: "Missing BIC")
 
   assert(
     call_wasm(check_reference_number, reference_number),
     message: "Invalid reference number",
   )
 
-  let iban = call_wasm(iban, payment.iban)
+  let iban = call_wasm(iban_constructor, iban)
 
   grid(
     columns: (1fr, 1fr, 1fr),
@@ -40,7 +42,7 @@
       columns: 2,
       translate("beneficiary"), beneficiary,
       [IBAN], iban,
-      [BIC], payment.bic,
+      [BIC], bic,
       translate("reference_number"), reference_number,
     ),
     if qrcode {
@@ -48,7 +50,7 @@
         amount,
         beneficiary,
         iban,
-        payment.bic,
+        bic,
         reference_number,
         due_date,
       )
