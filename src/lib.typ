@@ -35,6 +35,7 @@
   payment: none,
   reference_number: auto,
   barcode: true,
+  qrcode: true,
   items,
 ) = {
   set text(lang: lang)

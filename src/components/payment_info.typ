@@ -4,6 +4,7 @@
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/config.typ": CURRENCY
 #import "/src/components/bank_barcode.typ": bank_barcode
+#import "/src/components/bank_qrcode.typ": bank_qr_code
 
 #let payment_info(
   recipient,
@@ -11,6 +12,7 @@
   payment,
   due_date,
   reference_number,
+  qrcode: true,
   barcode: true,
 ) = {
   assert(type(recipient) == str)
@@ -31,8 +33,8 @@
   let iban = call_wasm(iban, payment.iban)
 
   grid(
-    columns: (1fr, 1fr),
-    align: (left, right),
+    columns: (1fr, 1fr, 1fr),
+    align: (left, center, right),
     table(
       columns: 2,
       translate("recipient"), recipient,
@@ -41,6 +43,16 @@
       [BIC], payment.bic,
       translate("reference_number"), reference_number,
     ),
+    if qrcode {
+      bank_qr_code(
+        amount,
+        recipient,
+        iban,
+        payment.bic,
+        reference_number,
+        due_date,
+      )
+    },
     table(
       columns: 2,
       translate("to_pay"), [*#formatter("{:.2}", amount) #CURRENCY*],
@@ -48,6 +60,7 @@
       due_date.display("[day padding:zero].[month padding:zero].[year]"),
     ),
   )
+
 
   if barcode {
     v(1fr)
