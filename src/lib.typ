@@ -19,19 +19,8 @@
   payment_terms: 14,
   invoice_number: auto,
   logo: none,
-  seller: (
-    name: "Company Oy",
-    business_id: "1234567-8",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
-  ),
-  recipient: (
-    name: "Recipient Name",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
-  ),
+  seller: none,
+  recipient: none,
   // Default VAT rate
   vat_rate: decimal("0.255"),
   iban: none,
@@ -45,6 +34,11 @@
 ) = {
   set text(lang: lang)
   set page(footer: contacts)
+
+  assert(
+    type(seller) == dictionary and "business_id" in seller,
+    message: "Missing seller Business ID",
+  )
 
   if invoice_number == auto {
     invoice_number = get_invoice_number(date)

@@ -3,6 +3,12 @@
   entity,
   title,
 ) = {
+  assert(type(entity) == dictionary)
+  assert("name" in entity)
+  assert("street" in entity)
+  assert("zip_code" in entity)
+  assert("city" in entity)
+
   (
     [*#title*],
     entity.name,
