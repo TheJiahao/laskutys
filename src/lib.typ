@@ -18,7 +18,7 @@
   date: datetime.today(),
   // Days to due date
   payment_terms: 14,
-  invoice_number: none,
+  invoice_number: auto,
   logo: none,
   seller: (
     name: "Company Oy",
@@ -36,16 +36,16 @@
   // Default VAT rate
   vat_rate: decimal("0.255"),
   payment: none,
-  reference_number: none,
+  reference_number: auto,
   items,
 ) = {
   set text(lang: lang)
 
-  if invoice_number == none {
+  if invoice_number == auto {
     invoice_number = generate_invoice_number(date)
   }
 
-  if reference_number == none {
+  if reference_number == auto {
     reference_number = call_wasm(generate_reference_number, invoice_number)
   }
 
