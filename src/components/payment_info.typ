@@ -38,32 +38,44 @@
 
   let iban = call_wasm(iban_constructor, iban)
 
-
-  box(stroke: black, radius: 0.5em, inset: 2em, grid(
-    columns: (5fr, 3fr),
-    align: (left, right),
+  let payment_block = grid(
+    columns: 2,
+    row-gutter: 0.5em,
     column-gutter: 1em,
+    [#translate("beneficiary"):], beneficiary,
+    [IBAN:], iban,
+    [BIC:], bic,
+    [#translate("reference_number"):], reference_number,
+  )
+  let amount_block = [
+    #set text(size: 1.3em)
 
-    grid(
-      columns: 2,
-      row-gutter: 0.5em,
-      column-gutter: 1em,
-      [#translate("beneficiary"):], beneficiary,
-      [IBAN:], iban,
-      [BIC:], bic,
-      [#translate("reference_number"):], reference_number,
-    ),
-
-    grid(
+    #grid(
       columns: 2,
       column-gutter: 1em,
       row-gutter: 0.5em,
       [#translate("to_pay"):], [*#formatter("{:.2}", amount) #CURRENCY*],
+
       [#translate("due_date"):],
       due_date.display("[year]-[month padding:zero]-[day padding:zero]"),
+    )]
+
+  box(stroke: black, radius: 0.5em, inset: 2em, grid(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    column-gutter: 1em,
+
+    grid.cell(
+      colspan: 2,
+      align: left,
+      payment_block,
+    ),
+    grid.cell(
+      colspan: 2,
+      align: right,
+      amount_block,
     ),
 
-    grid.cell(align: left + bottom, if barcode {
+    grid.cell(colspan: 3, align: left + bottom, if barcode {
       bank_barcode(
         amount,
         iban,
