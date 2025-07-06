@@ -2,9 +2,9 @@
 #import "@preview/tiaoma:0.3.0": qrcode
 #import "/src/utils/get_bank_qr_payload.typ": get_bank_qr_payload
 
-#let bank_qr_code(amount, recipient, iban, bic, reference_number, due_date) = {
+#let bank_qr_code(amount, beneficiary, iban, bic, reference_number, due_date) = {
   assert(
-    recipient.len() <= 70,
+    beneficiary.len() <= 70,
     message: "Name of beneficiary can be at most 70 characters",
   )
   assert(
@@ -14,7 +14,7 @@
 
   let payload = get_bank_qr_payload(
     amount,
-    recipient,
+    beneficiary,
     iban,
     bic,
     reference_number,

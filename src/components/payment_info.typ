@@ -7,7 +7,7 @@
 #import "/src/components/bank_qrcode.typ": bank_qr_code
 
 #let payment_info(
-  recipient,
+  beneficiary,
   amount,
   payment,
   due_date,
@@ -15,7 +15,7 @@
   qrcode: true,
   barcode: true,
 ) = {
-  assert(type(recipient) == str)
+  assert(type(beneficiary) == str)
   assert(type(amount) == decimal)
   assert(type(payment) == dictionary)
   assert(type(due_date) == datetime)
@@ -37,7 +37,7 @@
     align: (left, center, right),
     table(
       columns: 2,
-      translate("recipient"), recipient,
+      translate("beneficiary"), beneficiary,
       translate("bank"), payment.bank,
       [IBAN], iban,
       [BIC], payment.bic,
@@ -46,7 +46,7 @@
     if qrcode {
       bank_qr_code(
         amount,
-        recipient,
+        beneficiary,
         iban,
         payment.bic,
         reference_number,

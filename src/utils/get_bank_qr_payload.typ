@@ -3,14 +3,14 @@
 
 #let get_bank_qr_payload(
   amount,
-  recipient,
+  beneficiary,
   iban,
   bic,
   reference_number,
   due_date,
 ) = {
   assert(
-    recipient.len() <= 70,
+    beneficiary.len() <= 70,
     message: "Name of beneficiary can be at most 70 characters",
   )
   assert(
@@ -24,7 +24,7 @@
     "1",
     "SCT",
     bic,
-    recipient,
+    beneficiary,
     iban.replace(" ", ""),
     strfmt("EUR{:.2}", amount, decimal_separator: "."),
     "",
