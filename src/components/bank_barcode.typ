@@ -5,6 +5,11 @@
 #let bank_barcode(amount, iban, reference_number, due_date) = {
   assert(type(due_date) == datetime)
 
+  assert(
+    iban.starts-with("FI"),
+    message: "Bank barcode supports only Finnish IBAN",
+  )
+
   let barcode = call_wasm(generate_bank_barcode, (
     str(amount),
     iban,
