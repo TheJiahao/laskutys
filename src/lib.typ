@@ -7,6 +7,10 @@
 #import "components/vat_section.typ": vat_section
 #import "components/payment_info.typ": payment_info
 #import "utils/generate_invoice_number.typ": generate_invoice_number
+#import plugin("/rust-tools/rust_tools.wasm"): (
+  check_reference_number, generate_reference_number,
+)
+#import "utils/call_wasm.typ": call_wasm
 
 #let invoice(
   lang: "en",
@@ -41,6 +45,12 @@
     invoice_number = generate_invoice_number(date)
   }
 
+  if reference_number == none {
+    reference_number = call_wasm(generate_reference_number, invoice_number)
+  }
+
+  assert(call_wasm(check_reference_number, reference_number))
+
   let items = preprocess_items(items, vat_rate)
   let sum = items.map(item => item.at("total_price")).sum()
 
@@ -67,5 +77,6 @@
     currency,
     payment,
     date + duration(days: payment_terms),
+    reference_number,
   )
 }

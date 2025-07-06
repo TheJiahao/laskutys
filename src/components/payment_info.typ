@@ -7,7 +7,7 @@
   currency,
   payment,
   due_date,
-  reference_number: none,
+  reference_number,
 ) = {
   grid(
     columns: (1fr, 1fr),
