@@ -1,4 +1,4 @@
-use std::{collections::HashMap, str::FromStr};
+use std::collections::HashMap;
 
 use itertools::Itertools;
 use rust_decimal::Decimal;
@@ -10,21 +10,7 @@ initiate_protocol!();
 
 #[wasm_func]
 pub fn consolidate_vat(data: &[u8]) -> Result<Vec<u8>, CBORError> {
-    let result = cbor_wrapper(data, |input: Vec<(String, String)>| {
-        let decimals: Vec<(Decimal, Decimal)> = input
-            .into_iter()
-            .map(|(a, b)| {
-                (
-                    Decimal::from_str(&a).unwrap(),
-                    Decimal::from_str(&b).unwrap(),
-                )
-            })
-            .collect();
-
-        Ok(calculate_vat(&decimals))
-    })?;
-
-    Ok(result)
+    cbor_wrapper(data, |x: Vec<_>| Ok(calculate_vat(&x)))
 }
 
 fn calculate_vat(data: &[(Decimal, Decimal)]) -> HashMap<Decimal, Decimal> {

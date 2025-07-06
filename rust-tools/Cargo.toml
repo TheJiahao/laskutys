@@ -7,7 +7,7 @@ edition = "2024"
 crate-type = ["cdylib"]
 
 [dependencies]
-rust_decimal = { version = "1.37.2", features = ["macros"] }
+rust_decimal = { version = "1.37.2", features = ["macros", "serde-str"] }
 ciborium = "0.2.2"
 itertools = "0.14.0"
 serde = "1.0.219"
