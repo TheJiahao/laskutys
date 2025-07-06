@@ -6,6 +6,7 @@
 #import "components/legal_entity.typ": legal_entity
 #import "components/vat_section.typ": vat_section
 #import "components/payment_info.typ": payment_info
+#import "utils/generate_invoice_number.typ": generate_invoice_number
 
 #let invoice(
   lang: "en",
@@ -36,7 +37,12 @@
 ) = {
   set text(lang: lang)
 
-  header(date, invoice_number: invoice_number)
+  if invoice_number == none {
+    invoice_number = generate_invoice_number(date)
+  }
+
+
+  header(invoice_number, date)
 
   grid(
     columns: (1fr, 1fr),
