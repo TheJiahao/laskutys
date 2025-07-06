@@ -32,9 +32,9 @@
     table(
       columns: 2,
       translate("recipient"), recipient,
-      translate("bank"), payment.at("bank"),
-      [IBAN], payment.at("iban"),
-      [BIC], payment.at("bic"),
+      translate("bank"), payment.bank,
+      [IBAN], payment.iban,
+      [BIC], payment.bic,
       translate("reference_number"), reference_number,
     ),
     table(
