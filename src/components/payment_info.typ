@@ -63,10 +63,7 @@
     ),
   )
 
-
   if barcode {
-    v(1fr)
-
     bank_barcode(amount, iban, reference_number, due_date)
   }
 }
