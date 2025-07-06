@@ -30,9 +30,11 @@
   barcode: true,
   // Show EPC QR code
   qrcode: true,
+  font: auto,
   items,
 ) = {
   set text(lang: lang)
+  set text(font: font) if (font != auto)
   set page(footer: contacts)
 
   assert(
