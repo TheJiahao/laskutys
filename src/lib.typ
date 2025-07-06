@@ -49,6 +49,7 @@
 
   let items = preprocess_items(items, vat_rate)
   let sum = items.map(item => item.at("total_price")).sum()
+  let due_date = date + duration(days: payment_terms)
 
   header(invoice_number, date)
 
@@ -72,7 +73,7 @@
     sum,
     currency,
     payment,
-    date + duration(days: payment_terms),
+    due_date,
     reference_number,
   )
 }
