@@ -1,7 +1,7 @@
 #import "/src/components/vat_row.typ": vat_row
 #import "/src/utils/translate.typ": translate
 #import "/src/utils/vat_calculation.typ": get_sum_row, preprocess
-#import "/src/config.typ": CURRENCY
+#import "/src/config.typ": COLORS, CURRENCY
 
 #let vat_section(items) = {
   let result = preprocess(items)
@@ -21,13 +21,13 @@
       [#translate("vat")~(#CURRENCY)],
       [#translate("price_with_vat")~(#CURRENCY)],
     ),
-    table.hline(stroke: black.lighten(50%)),
+    table.hline(stroke: COLORS.PASSIVE),
 
     ..for entry in result {
       vat_row(..entry)
     },
 
-    table.hline(stroke: black.lighten(50%)),
+    table.hline(),
     strong(translate("total")), ..sum_row.map(strong),
   )
 }
