@@ -1,12 +1,12 @@
-#import "utils/translate.typ": translate
-#import "utils/preprocess_items.typ": preprocess_items
-#import "components/item_row.typ": item_row
-#import "components/item_list.typ": item_list
-#import "components/header.typ": header
-#import "components/vat_section.typ": vat_section
-#import "components/payment_info.typ": payment_info
-#import "utils/get_invoice_number.typ": get_invoice_number
-#import "utils/get_reference_number.typ": get_reference_number
+#import "/src/utils/translate.typ": translate
+#import "/src/utils/preprocess_items.typ": preprocess_items
+#import "/src/components/item_row.typ": item_row
+#import "/src/components/item_list.typ": item_list
+#import "/src/components/header.typ": header
+#import "/src/components/vat_section.typ": vat_section
+#import "/src/components/payment_info.typ": payment_info
+#import "/src/utils/get_invoice_number.typ": get_invoice_number
+#import "/src/utils/get_reference_number.typ": get_reference_number
 
 #let invoice(
   lang: "en",
