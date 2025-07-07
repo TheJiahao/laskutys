@@ -38,15 +38,18 @@
 
   let iban = call_wasm(iban_constructor, iban)
 
-  let payment_block = grid(
-    columns: 2,
-    row-gutter: 0.5em,
-    column-gutter: 1em,
-    [#translate("beneficiary"):], beneficiary,
-    [IBAN:], iban,
-    [BIC:], bic,
-    [#translate("reference_number"):], reference_number,
-  )
+  let payment_block = [
+    #set text(size: 0.9em)
+
+    #grid(
+      columns: 2,
+      row-gutter: 0.5em,
+      column-gutter: 1em,
+      [#translate("beneficiary"):], beneficiary,
+      [IBAN:], iban,
+      [BIC:], bic,
+      [#translate("reference_number"):], reference_number,
+    )]
   let amount_block = [
     #set text(size: 1.3em)
 
