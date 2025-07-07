@@ -7,8 +7,7 @@
 #import "components/vat_section.typ": vat_section
 #import "components/payment_info.typ": payment_info
 #import "utils/get_invoice_number.typ": get_invoice_number
-#import plugin("/rust_tools/rust_tools.wasm"): get_reference_number
-#import "utils/call_wasm.typ": call_wasm
+#import "utils/get_reference_number.typ": get_reference_number
 
 #let invoice(
   lang: "en",
@@ -47,7 +46,7 @@
   }
 
   if reference_number == auto {
-    reference_number = call_wasm(get_reference_number, invoice_number)
+    reference_number = get_reference_number(invoice_number)
   }
 
   let items = preprocess_items(items, vat_rate)
