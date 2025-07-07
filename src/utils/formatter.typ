@@ -1,7 +1,7 @@
 #import "@preview/oxifmt:1.0.0": strfmt
 
 #let get_decimal_separator(lang) = {
-  let decimal_separators = ("fi": ",", "en": ".")
+  let decimal_separators = ("fi": ",", "en": ".", "sv": ",")
 
   decimal_separators.at(lang)
 }
