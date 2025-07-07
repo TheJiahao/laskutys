@@ -24,6 +24,7 @@
   vat_rate: decimal("0.255"),
   iban: none,
   bic: none,
+  // ISO 11649 reference number that begins with RF, only digits after RF are supported
   reference_number: auto,
   // Show bank barcode
   barcode: true,
