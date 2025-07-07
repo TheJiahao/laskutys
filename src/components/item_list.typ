@@ -7,7 +7,7 @@
     columns: (3fr, auto, auto, auto, 1.5fr),
     align: (left, right, right, right, right),
     fill: (_, y) => if y == 0 { gray.lighten(70%) },
-    stroke: none,
+    stroke: gray.lighten(40%),
     inset: 0.5em,
 
     table.header(
