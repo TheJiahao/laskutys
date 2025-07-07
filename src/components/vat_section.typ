@@ -12,10 +12,10 @@
     align: (right, right, right, right),
 
     table.header(
-      [#translate("vat")-%],
-      [#translate("price_without_vat") (#CURRENCY)],
-      [#translate("vat") (#CURRENCY)],
-      [#translate("price_with_vat") (#CURRENCY)],
+      [#translate("vat")~(%)],
+      [#translate("price_without_vat")~(#CURRENCY)],
+      [#translate("vat")~(#CURRENCY)],
+      [#translate("price_with_vat")~(#CURRENCY)],
     ),
 
     ..for entry in result {

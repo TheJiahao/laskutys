@@ -12,12 +12,12 @@
 
     table.header(
       translate("item"),
-      [#translate("unit_price") (#CURRENCY)],
+      [#translate("unit_price")~(#CURRENCY)],
       translate(
         "quantity",
       ),
-      [#translate("vat")-%],
-      [#translate("total_with_tax") (#CURRENCY)],
+      [#translate("vat")~(%)],
+      [#translate("total_with_tax")~(#CURRENCY)],
     ),
 
     ..for item in items {
