@@ -79,6 +79,9 @@ jobs:
         with:
           crate: tytanic
 
+      - name: Build
+        run: just build
+
       - name: Run tests
         run: just test
 
