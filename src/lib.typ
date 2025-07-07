@@ -71,7 +71,11 @@
   )
 
   item_list(items)
-  vat_section(items)
+
+  grid(
+    columns: (1fr, 2fr),
+    [], vat_section(items),
+  )
   payment_info(
     beneficiary: seller.name,
     amount: sum,
