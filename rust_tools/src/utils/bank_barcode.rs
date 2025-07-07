@@ -47,6 +47,8 @@ fn get_barcode(
     .to_u8()
     .unwrap();
 
+    println!("{cents}");
+
     Ok(Barcode::builder()
         .euros(euros)
         .cents(cents)
@@ -55,4 +57,24 @@ fn get_barcode(
         .calendar_due_date(year, month, day)
         .build()?
         .to_string())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use pretty_assertions::assert_str_eq;
+    use rstest::rstest;
+    use rust_decimal::dec;
+
+    #[rstest]
+    fn test_barcode_has_correct_amount() {
+        let amount = dec!(10083.97);
+        let iban = "FI2112345600000785";
+        let reference_number = "RF970123456";
+
+        let barcode = get_barcode(amount, iban, reference_number, 2023, 10, 1).unwrap();
+
+        assert_str_eq!(&barcode[17..17 + 6], "010083");
+        assert_str_eq!(&barcode[23..23 + 2], "97");
+    }
 }
