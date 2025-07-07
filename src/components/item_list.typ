@@ -8,13 +8,13 @@
   } else { c }
 
   table(
-    columns: (3fr, auto, auto, auto, 1.5fr),
+    columns: (3fr, auto, auto, auto, 2fr),
     align: (left, right, right, right, right),
     fill: (_, y) => if calc.even(y) and y > 0 {
       COLORS.BG_PASSIVE
     },
     stroke: none,
-    inset: 0.5em,
+    inset: (x: 0.75em, y: 0.5em),
 
     table.header(
       translate("item"),
