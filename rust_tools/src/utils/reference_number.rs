@@ -8,7 +8,7 @@ initiate_protocol!();
 #[wasm_func]
 pub fn get_reference_number(data: &[u8]) -> Result<Vec<u8>, CBORError> {
     cbor_wrapper(data, |reference_number: String| {
-        Ok(RfCreditorReference::new(&reference_number).to_string())
+        Ok(RfCreditorReference::new(&reference_number).to_electronic_string())
     })
 }
 
