@@ -7,9 +7,13 @@
   let result = preprocess(items)
   let sum_row = get_sum_row(result)
 
+  set text(size: 0.85em)
+
   table(
-    columns: (1fr, 1fr, 1fr, 1fr),
+    columns: (auto, 1fr, auto, 1fr),
+    inset: 0.5em,
     align: (right, right, right, right),
+    stroke: none,
 
     table.header(
       [#translate("vat")~(%)],
@@ -17,11 +21,13 @@
       [#translate("vat")~(#CURRENCY)],
       [#translate("price_with_vat")~(#CURRENCY)],
     ),
+    table.hline(stroke: black.lighten(50%)),
 
     ..for entry in result {
       vat_row(..entry)
     },
-    strong(translate("total")),
-    ..sum_row.map(strong),
+
+    table.hline(stroke: black.lighten(50%)),
+    strong(translate("total")), ..sum_row.map(strong),
   )
 }

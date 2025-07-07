@@ -73,7 +73,7 @@
   item_list(items)
 
   grid(
-    columns: (1fr, 2fr),
+    columns: (1fr, 3fr),
     [], vat_section(items),
   )
   payment_info(
