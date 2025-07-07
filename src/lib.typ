@@ -3,7 +3,6 @@
 #import "components/item_row.typ": item_row
 #import "components/item_list.typ": item_list
 #import "components/header.typ": header
-#import "components/legal_entity.typ": legal_entity
 #import "components/vat_section.typ": vat_section
 #import "components/payment_info.typ": payment_info
 #import "utils/get_invoice_number.typ": get_invoice_number
@@ -38,11 +37,6 @@
   set text(font: font) if (font != auto)
   set page(footer: contacts)
 
-  assert(
-    type(seller) == dictionary and "business_id" in seller,
-    message: "Missing seller Business ID",
-  )
-
   if invoice_number == auto {
     invoice_number = get_invoice_number(date)
   }
@@ -55,19 +49,12 @@
   let sum = items.map(item => item.total_price).sum()
   let due_date = date + duration(days: payment_terms)
 
-  header(invoice_number, date)
-
-  grid(
-    columns: (1fr, 1fr),
-    align: (left + bottom, right + bottom),
-    gutter: 2em,
-
-    legal_entity(recipient, translate("purchaser")),
-    [
-      #if logo != none { image(logo, height: 5em) }
-
-      #legal_entity(seller, translate("seller"))
-    ],
+  header(
+    invoice_number,
+    date,
+    recipient: recipient,
+    seller: seller,
+    logo: logo,
   )
 
   item_list(items)
