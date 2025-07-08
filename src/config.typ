@@ -5,5 +5,5 @@
   ACTIVE: black,
 )
 #let FONT_SIZES = (
-  SMALL: 0.85em
+  SMALL: 0.85em,
 )
