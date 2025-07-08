@@ -11,8 +11,9 @@
 #let invoice(
   lang: "en",
   date: datetime.today(),
-  // Contact information, displayd as is
-  contacts: [],
+  /// Footnotes, displayd as is.
+  /// For example, it can contain contacts, reverse charge if payer pays VAT, etc.
+  footnotes: [],
   // Days to due date
   payment_terms: 14,
   invoice_number: auto,
@@ -35,7 +36,7 @@
 ) = {
   set text(lang: lang, size: 12pt)
   set text(font: font) if (font != auto)
-  set page(footer: contacts)
+  set page(footer: footnotes)
 
   show table.cell: c => if c.y == 0 {
     align(bottom, strong(c))
