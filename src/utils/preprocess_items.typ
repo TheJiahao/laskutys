@@ -22,14 +22,13 @@
     let vat_rate = decimal(item.at("vat_rate", default: default_vat_rate))
     let quantity = decimal(item.quantity)
     let unit_price = decimal(item.unit_price)
-    let unit_price_without_vat = unit_price / (1 + vat_rate)
+    let unit_price_without_vat = decimal(item.unit_price) / (1 + vat_rate)
     let total_price = quantity * unit_price
 
     (
-      ..item,
+      description: item.description,
       vat_rate: vat_rate,
       total_price: total_price,
-      unit_price: unit_price,
       unit_price_without_vat: unit_price_without_vat,
       quantity: quantity,
     )

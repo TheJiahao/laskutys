@@ -4,8 +4,8 @@
 
 #let item_list(items) = {
   table(
-    columns: (3fr, 2fr, 2fr, auto, auto, 2fr),
-    align: (left, right, right, right, right, right),
+    columns: (3fr, 2fr, auto, auto, 2fr),
+    align: (left, right, right, right, right),
     fill: (_, y) => if calc.even(y) and y > 0 {
       COLORS.BG_PASSIVE
     },
@@ -14,7 +14,6 @@
 
     table.header(
       translate("item"),
-      [#translate("unit_price_with_vat")~(#CURRENCY)],
       [#translate("unit_price_without_vat")~(#CURRENCY)],
       translate(
         "quantity",
