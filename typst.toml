@@ -15,3 +15,4 @@ exclude = ["tests/**", ".vscode/**","rust_tools/target/**"]
 [template]
 path = "template"
 entrypoint = "template/main.typ"
+thumbnail = "docs/images/thumbnail.png"
