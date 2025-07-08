@@ -4,4 +4,6 @@
   PASSIVE: gray.lighten(25%),
   ACTIVE: black,
 )
-
+#let FONT_SIZES = (
+  SMALL: 0.85em
+)

@@ -4,7 +4,7 @@
   check_reference_number, iban as iban_constructor,
 )
 #import "/src/utils/call_wasm.typ": call_wasm
-#import "/src/config.typ": CURRENCY
+#import "/src/config.typ": CURRENCY, FONT_SIZES
 #import "/src/components/bank_barcode.typ": bank_barcode
 #import "/src/components/bank_qrcode.typ": bank_qr_code
 
@@ -39,7 +39,7 @@
   let iban = call_wasm(iban_constructor, iban)
 
   let payment_block = [
-    #set text(size: 0.9em)
+    #set text(size: FONT_SIZES.SMALL)
 
     #grid(
       columns: 2,
