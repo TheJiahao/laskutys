@@ -17,7 +17,6 @@ due_date = "Due date"
 beneficiary = "Beneficiary"
 reference_number = "Reference number"
 to_pay = "To pay"
-bank = "Bank"
 
 [lang.fi]
 invoice = "Lasku"
@@ -35,7 +34,6 @@ due_date = "Eräpäivä"
 beneficiary = "Saaja"
 reference_number = "Viitenumero"
 to_pay = "Maksettava"
-bank = "Pankki"
 
 [lang.sv]
 invoice = "Faktura"
