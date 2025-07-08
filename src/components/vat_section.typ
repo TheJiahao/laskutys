@@ -28,7 +28,7 @@
       vat_row(..entry)
     },
 
-    table.hline(),
+    table.hline(stroke: colors.active),
     strong(translate("total")), ..sum_row.map(strong),
   )
 }
