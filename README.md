@@ -41,6 +41,9 @@ Among other things, this template features:
     zip_code: "01234",
     city: "City",
   ),
+  /// fi: Finnish
+  /// en: English (default)
+  /// sv: Swedish
   lang: "fi",
   footnotes: [Company Oy, Phone: +358 123 4567, Email: sales.person\@company.com],
   data,
