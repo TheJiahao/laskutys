@@ -30,7 +30,7 @@ See [API documentation](/docs/api.md) for all arguments.
   /// Optional
   invoice_number: "0123456",
   /// Optional logo, displayed as is
-  logo: image("/src/logo.svg", height: 4em),
+  logo: image("logo.svg", height: 4em),
   iban: "FI2112345600000785",
   bic: "OKOYFIHH",
   seller: (
