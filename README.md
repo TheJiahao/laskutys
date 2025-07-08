@@ -17,14 +17,18 @@ Among other things, this template features:
 
 ## Usage
 
+See [/src/components/invoice.typ](https://github.com/TheJiahao/typst-finnish-invoice/blob/5fa8919f41abc17dc045f23db3bab746b2b28149/src/components/invoice.typ) for all parameters.
+
 ```typst
 #import "@preview/laskutys:1.0.0": invoice
 
 #let data = yaml("data.yaml")
 
 #invoice(
+  /// Optional, defaults to today
   date: datetime(year: 2025, month: 09, day: 30),
   invoice_number: "0123456",
+  /// Optional logo, displayed as is
   logo: image("/src/logo.svg", height: 4em),
   iban: "FI2112345600000785",
   bic: "OKOYFIHH",
@@ -35,6 +39,7 @@ Among other things, this template features:
     zip_code: "01234",
     city: "City",
   ),
+  /// Recipient can also have business_id
   recipient: (
     name: "Recipient Name",
     street: "Street 123",
