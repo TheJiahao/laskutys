@@ -23,7 +23,7 @@
       #date.display()
     ],
 
-    grid.cell(align: top, if logo != none { image(logo, height: 5em) }),
+    grid.cell(align: top, logo),
 
     grid.cell(align: bottom, legal_entity(recipient, translate("purchaser"))),
 
