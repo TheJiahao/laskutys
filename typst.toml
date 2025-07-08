@@ -18,4 +18,13 @@ entrypoint = "template/main.typ"
 thumbnail = "docs/images/thumbnail.png"
 
 [tool.packager]
-paths = ["src", "template", "docs", "rust_tools/rust_tools.wasm"]
+paths = [
+    "src",
+    "template",
+    "docs",
+    "rust_tools/rust_tools.wasm",
+    "LICENSE",
+    "licenses",
+    "examples",
+    "README.md",
+]
