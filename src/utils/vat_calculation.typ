@@ -2,6 +2,7 @@
 #import "/src/utils/call_wasm.typ": call_wasm
 #import "/src/utils/formatter.typ": formatter
 
+/// -> array
 #let preprocess(items) = {
   let items = items.map(((vat_rate, total_price)) => (
     vat_rate,

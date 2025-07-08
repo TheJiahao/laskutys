@@ -4,6 +4,8 @@
 #import "/src/utils/call_wasm.typ": call_wasm
 
 /// Removes leading zeros after check digits and spaces
+///
+/// -> str
 #let preprocess(
   reference_number,
 ) = {
@@ -14,6 +16,7 @@
   prefix + digits
 }
 
+/// -> str
 #let get_reference_number(data) = {
   let reference_number = call_wasm(_get_reference_number, data)
 

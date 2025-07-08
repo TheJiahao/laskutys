@@ -3,6 +3,7 @@
 #import "/src/utils/vat_calculation.typ": get_sum_row, preprocess
 #import "/src/config.typ": COLORS, CURRENCY, FONT_SIZES
 
+/// -> content
 #let vat_section(items) = {
   let result = preprocess(items)
   let sum_row = get_sum_row(result)

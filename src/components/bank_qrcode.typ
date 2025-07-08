@@ -2,6 +2,7 @@
 #import "@preview/tiaoma:0.3.0": qrcode
 #import "/src/utils/get_bank_qr_payload.typ": get_bank_qr_payload
 
+/// -> content
 #let bank_qr_code(
   amount,
   beneficiary,

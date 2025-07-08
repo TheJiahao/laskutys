@@ -1,4 +1,6 @@
-// Content block containing name and other information of a legal entity i.e. seller or purchaser
+/// Content block containing name and other information of a legal entity i.e. seller or purchaser
+///
+/// -> content
 #let legal_entity(
   entity,
   title,

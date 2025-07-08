@@ -1,3 +1,6 @@
+/// Converts monetary values to decimal and calculates various prices
+///
+/// -> array
 #let preprocess_items(
   items,
   default_vat_rate,

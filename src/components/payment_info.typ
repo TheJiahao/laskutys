@@ -8,6 +8,9 @@
 #import "/src/components/bank_barcode.typ": bank_barcode
 #import "/src/components/bank_qrcode.typ": bank_qr_code
 
+/// Payment info: IBAN, BIC, amount to pay, etc.
+///
+/// -> content
 #let payment_info(
   beneficiary: none,
   amount: none,

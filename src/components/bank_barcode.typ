@@ -1,7 +1,7 @@
 #import "@preview/tiaoma:0.3.0": code128
 #import "/src/utils/get_bank_barcode_payload.typ": get_bank_barcode_payload
 
-
+/// -> content
 #let bank_barcode(
   amount,
   iban,

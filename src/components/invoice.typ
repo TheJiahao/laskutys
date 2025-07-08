@@ -8,6 +8,20 @@
 #import "/src/utils/get_invoice_number.typ": get_invoice_number
 #import "/src/utils/get_reference_number.typ": get_reference_number
 
+/// Invoice component.
+///
+/// Works with show rules:
+///
+/// ```typst
+/// #show: invoice(...)
+/// ```
+///
+/// Or directly called:
+/// ```typst
+/// #invoice(...)
+/// ```
+///
+/// -> content
 #let invoice(
   lang: "en",
   date: datetime.today(),

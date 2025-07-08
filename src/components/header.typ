@@ -1,6 +1,7 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/components/legal_entity.typ": legal_entity
 
+/// -> content
 #let header(
   invoice_number,
   date,

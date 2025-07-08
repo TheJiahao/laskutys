@@ -1,6 +1,7 @@
 #import "@preview/oxifmt:1.0.0": strfmt
 #import "@preview/tiaoma:0.3.0": qrcode
 
+/// -> str
 #let get_bank_qr_payload(
   amount,
   beneficiary,
