@@ -1,4 +1,4 @@
-#import "../src/lib.typ": *
+#import "@preview/laskutys:1.0.0": *
 
 #let data = yaml("data.yaml")
 
