@@ -16,6 +16,7 @@ subgraph src
     components --> config.typ
     components --> utils.typ
     
+    config.typ --> themes.typ
     lib.typ --> components
 end
 ```
@@ -26,6 +27,7 @@ The content of Typst files and directories:
 - `components/`: visual components, mostly `content` type
 - `config.typ`: configurations
 - `lib.typ`: entrypoint, exposes public functions
+- `themes.typ`: color themes
 
 The dependency graph components:
 
