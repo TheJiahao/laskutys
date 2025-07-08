@@ -17,3 +17,9 @@ Import presets from the package:
 ## PRESET_FOREST
 
 ![PRESET_FOREST](/docs/images/preset_forest.svg)
+
+## PRESET_ARCTIC
+
+Inspirated by GMK Arctic keycaps by Mcnos.
+
+![PRESET_ARCTIC](/docs/images/preset_arctic.svg)

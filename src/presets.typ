@@ -21,3 +21,9 @@
   passive: color.hsl(22deg, 50%, 40%),
   bg_passive: gray.lighten(85%),
 )
+
+#let PRESET_ARCTIC = (
+  active: color.hsl(216deg, 50%, 54%),
+  passive: color.hsl(220deg, 5%, 50%),
+  bg_passive: color.hsl(210deg, 6%, 90%),
+)
