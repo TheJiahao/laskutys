@@ -20,6 +20,7 @@
   reference_number: none,
   // Show bank barcode
   barcode: true,
+  show_barcode_text: true,
   // Show EPC QR code
   qrcode: true,
 ) = {
@@ -87,6 +88,7 @@
         iban,
         reference_number,
         due_date,
+        show_text: show_barcode_text,
       )
     }),
 

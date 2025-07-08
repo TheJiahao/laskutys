@@ -43,6 +43,7 @@
   reference_number: auto,
   /// Show bank barcode
   barcode: true,
+  show_barcode_text: true,
   /// Show EPC QR code
   qrcode: true,
   font: auto,
@@ -91,6 +92,7 @@
     iban: iban,
     bic: bic,
     barcode: barcode,
+    show_barcode_text: show_barcode_text,
     qrcode: qrcode,
   )
 }

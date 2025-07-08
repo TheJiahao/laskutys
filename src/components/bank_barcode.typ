@@ -7,6 +7,7 @@
   iban,
   reference_number,
   due_date,
+  show_text: true,
 ) = {
   let barcode = get_bank_barcode_payload(
     amount,
@@ -18,8 +19,11 @@
   set text(size: 10pt)
 
   align(center)[
-    #v(1em)
-    #barcode
+    #if show_text {
+      v(1em)
+      barcode
+    }
+
     #code128(barcode, options: (
       height: 33.0,
       text-gap: 10.0,
