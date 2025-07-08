@@ -15,3 +15,9 @@
   passive: color.hsl(9.2deg, 80%, 85%),
   bg_passive: color.hsl(44.9deg, 70%, 95%),
 )
+
+#let PRESET_FOREST = (
+  active: olive.darken(5%),
+  passive: color.hsl(22deg, 50%, 40%),
+  bg_passive: gray.lighten(85%),
+)

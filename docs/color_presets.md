@@ -13,3 +13,7 @@ Import presets from the package:
 ## PRESET_DESERT
 
 ![PRESET_DESERT](/docs/images/preset_desert.svg)
+
+## PRESET_FOREST
+
+![PRESET_FOREST](/docs/images/preset_forest.svg)
