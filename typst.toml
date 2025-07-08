@@ -10,7 +10,7 @@ compiler = "0.13.1"
 license = "MIT"
 categories = ["office"]
 disciplines = ["business"]
-exclude = ["tests/**", ".vscode/**","rust_tools/target/**",".github/**"]
+exclude = ["tests/**", ".vscode/**", "rust_tools/target/**", ".github/**"]
 
 [template]
 path = "template"
@@ -18,9 +18,4 @@ entrypoint = "template/main.typ"
 thumbnail = "docs/images/thumbnail.png"
 
 [tool.packager]
-paths = [
-    "src",
-    "template",
-    "docs",
-    "rust_tools/rust_tools.wasm",
-]
+paths = ["src", "template", "docs", "rust_tools/rust_tools.wasm"]
