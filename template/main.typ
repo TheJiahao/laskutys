@@ -4,7 +4,6 @@
 
 #invoice(
   date: datetime(year: 2025, month: 09, day: 30),
-  invoice_number: "0123456",
   logo: image("/src/logo.svg", height: 4em),
   iban: "FI2112345600000785",
   bic: "OKOYFIHH",
