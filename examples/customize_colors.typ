@@ -22,7 +22,7 @@
     ..DEFAULT_COLORS,
     active: blue,
     bg_passive: teal.lighten(85%),
-    passive: red.lighten(50%),
+    passive: teal,
   ),
   data,
 )
