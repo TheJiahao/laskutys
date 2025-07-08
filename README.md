@@ -9,6 +9,7 @@ Among other things, this template features:
 - Optional [EPC QR Code](https://www.finanssiala.fi/wp-content/uploads/2021/03/QR_code_in_credit_transfer_forms.pdf) (European Payment Council’s Quick Response Code)
 - Invoice number generation from date
 - [RF creditor reference](https://www.finanssiala.fi/wp-content/uploads/2024/04/structure-of-the-rf-creditor-reference-iso-11649.pdf) (ISO 11649) generation from invoice number
+- Customizable colors
 
 > [!NOTE]
 > VAT-calculation might have rounding errors due to division.
@@ -106,6 +107,48 @@ The data can also be defined directly in Typst as array:
 ```
 
 You can also use other [loader functions](https://typst.app/docs/reference/data-loading/) if they can produce an array in the same format.
+
+## Examples
+
+### Customize colors
+
+```typst
+#import "@preview/laskutys:1.0.0": DEFAULT_COLORS, invoice
+
+#let data = yaml("data.yaml")
+
+#invoice(
+  iban: "FI2112345600000785",
+  bic: "OKOYFIHH",
+  seller: (
+    name: "Company Oy",
+    business_id: "1234567-8",
+    street: "Street 123",
+    zip_code: "01234",
+    city: "City",
+  ),
+  recipient: (
+    name: "Recipient Name",
+    street: "Street 123",
+    zip_code: "01234",
+    city: "City",
+  ),
+  colors: (
+    ..DEFAULT_COLORS
+    active: blue,
+    bg_passive: teal.lighten(85%),
+    passive: red.lighten(50%),
+  ),
+  data,
+)
+```
+
+![Changing colors](/docs/images/example_customize_colors.svg)
+
+> [!TIP]
+> The `DEFAULT_COLORS` is needed if you don't want to override all colors.
+
+### Change language
 
 ## Documentation
 
