@@ -1,4 +1,4 @@
-# finnish-invoice
+# Laskutys
 
 A Typst template for Finnish invoice
 

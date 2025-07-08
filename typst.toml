@@ -1,5 +1,5 @@
 [package]
-name = "lasku"
+name = "laskutys"
 version = "0.1.0"
 entrypoint = "src/lib.typ"
 authors = ["Jiahao Li"]
