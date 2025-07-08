@@ -96,5 +96,6 @@
     barcode: barcode,
     show_barcode_text: show_barcode_text,
     qrcode: qrcode,
+    colors: colors,
   )
 }

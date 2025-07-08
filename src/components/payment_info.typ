@@ -4,7 +4,7 @@
   check_reference_number, iban as iban_constructor,
 )
 #import "/src/utils/call_wasm.typ": call_wasm
-#import "/src/config.typ": CURRENCY, FONT_SIZES
+#import "/src/config.typ": CURRENCY, FONT_SIZES, DEFAULT_COLORS
 #import "/src/components/bank_barcode.typ": bank_barcode
 #import "/src/components/bank_qrcode.typ": bank_qr_code
 
@@ -23,6 +23,7 @@
   show_barcode_text: true,
   // Show EPC QR code
   qrcode: true,
+  colors: DEFAULT_COLORS,
 ) = {
   assert(beneficiary != none, message: "Missing beneficiary")
   assert(amount != none, message: "Missing amount")
@@ -67,7 +68,7 @@
       due_date.display("[year]-[month padding:zero]-[day padding:zero]"),
     )]
 
-  box(stroke: black, radius: 0.5em, inset: 2em, grid(
+  box(stroke: colors.active, radius: 0.5em, inset: 2em, grid(
     columns: (1fr, 1fr, 1fr, 1fr),
     column-gutter: 1em,
 
