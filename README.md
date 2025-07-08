@@ -81,6 +81,10 @@ Output of the above code:
 > Pass `unit_price` and `vat_rate` as string, so that they can be converted to decimal without errors.
 > This avoids rounding errors due to imprecision of floating-point numbers.
 
+## Documentation
+
+- [Development](/docs/development.md)
+
 ## License
 
 The project is licensed under [MIT-license](/LICENSE).
