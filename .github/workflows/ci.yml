@@ -109,11 +109,19 @@ jobs:
         with:
           crate: just
 
+      - name: Install showman
+        uses: BSFishy/pip-action@v1
+        with:
+          packages: showman
+
       - name: Build WASM plugin
         run: just build
 
       - name: Setup Typst
         uses: typst-community/setup-typst@v4
+
+      - name: Install package locally
+        run: showman package ./typst.toml -n preview
 
       - name: Build
         run: typst compile template/main.typ --root .
