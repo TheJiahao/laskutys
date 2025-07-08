@@ -110,6 +110,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 ## Documentation
 
 - [Development](/docs/development.md)
+- [Architecture](/docs/architecture.md)
 
 ## License
 
