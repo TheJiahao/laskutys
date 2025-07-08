@@ -20,7 +20,7 @@
         "quantity",
       ),
       [#translate("vat")~(%)],
-      [#translate("total_with_tax")~(#CURRENCY)],
+      [#translate("price_with_vat")~(#CURRENCY)],
     ),
     table.hline(stroke: COLORS.ACTIVE),
 
