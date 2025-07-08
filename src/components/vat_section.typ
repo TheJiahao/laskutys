@@ -10,7 +10,7 @@
   set text(size: 0.85em)
 
   table(
-    columns: (auto, 1fr, auto, 1fr),
+    columns: 4,
     inset: 0.5em,
     align: (right, right, right, right),
     stroke: none,

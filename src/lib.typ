@@ -65,6 +65,7 @@
 
   grid(
     columns: (1fr, 3fr),
+    align: (left, right),
     [], vat_section(items),
   )
   payment_info(
