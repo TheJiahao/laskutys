@@ -4,7 +4,7 @@
 #import "/src/config.typ": COLORS, CURRENCY, FONT_SIZES
 
 /// -> content
-#let vat_section(items) = {
+#let vat_section(items, colors: COLORS) = {
   let result = preprocess(items)
   let sum_row = get_sum_row(result)
 
@@ -22,7 +22,7 @@
       [#translate("vat")~(#CURRENCY)],
       [#translate("price_with_vat")~(#CURRENCY)],
     ),
-    table.hline(stroke: COLORS.PASSIVE),
+    table.hline(stroke: colors.PASSIVE),
 
     ..for entry in result {
       vat_row(..entry)

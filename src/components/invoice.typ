@@ -7,6 +7,7 @@
 #import "/src/components/payment_info.typ": payment_info
 #import "/src/utils/get_invoice_number.typ": get_invoice_number
 #import "/src/utils/get_reference_number.typ": get_reference_number
+#import "/src/config.typ": COLORS
 
 /// Invoice component.
 ///
@@ -47,6 +48,7 @@
   /// Show EPC QR code
   qrcode: true,
   font: auto,
+  colors: COLORS,
   items,
 ) = {
   set text(lang: lang, size: 12pt)
@@ -77,12 +79,12 @@
     logo: logo,
   )
 
-  item_list(items)
+  item_list(items, colors: colors)
 
   grid(
     columns: (1fr, 3fr),
     align: (left, right),
-    [], vat_section(items),
+    [], vat_section(items, colors: colors),
   )
   payment_info(
     beneficiary: seller.name,
