@@ -30,20 +30,17 @@ jobs:
         
       - name: Install Rust tools
         run: just install-dev-deps
-
+        
+      - name: Install Typstyle
+        uses: baptiste0928/cargo-install@v3
+        with:
+          crate: typstyle
+        
       - name: Lint
         run: just lint-fix
       
       - name: Format
         run: just format
-
-      - name: Install Typstyle
-        uses: baptiste0928/cargo-install@v3
-        with:
-          crate: typstyle
-
-      - name: Format
-        run: typstyle -i .
 
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
