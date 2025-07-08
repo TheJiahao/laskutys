@@ -81,6 +81,32 @@ Output of the above code:
 > Pass `unit_price` and `vat_rate` as string, so that they can be converted to decimal without errors.
 > This avoids rounding errors due to imprecision of floating-point numbers.
 
+The data can also be defined directly in Typst as array:
+
+```typst
+#let data = (
+  (
+    description: "Apple",
+    quantity: 10,
+    unit_price: "2",
+    vat_rate: "0.14",
+  ),
+  (
+    description: "Battery AA",
+    quantity: 2,
+    unit_price: "2",
+    vat_rate: "0.255",
+  ),
+  (
+    description: "Item with default VAT",
+    quantity: 3,
+    unit_price: "10",
+  ),
+),
+```
+
+You can also use other [loader functions](https://typst.app/docs/reference/data-loading/) if they can produce an array in the same format.
+
 ## Documentation
 
 - [Development](/docs/development.md)
