@@ -27,6 +27,7 @@ See [/src/components/invoice.typ](https://github.com/TheJiahao/typst-finnish-inv
 #invoice(
   /// Optional, defaults to today
   date: datetime(year: 2025, month: 09, day: 30),
+  /// Optional
   invoice_number: "0123456",
   /// Optional logo, displayed as is
   logo: image("/src/logo.svg", height: 4em),
