@@ -5,7 +5,7 @@
 #let item_list(items) = {
   table(
     columns: (3fr, 2fr, 2fr, auto, auto, 2fr),
-    align: (left, right, right, right, right),
+    align: (left, right, right, right, right, right),
     fill: (_, y) => if calc.even(y) and y > 0 {
       COLORS.BG_PASSIVE
     },
