@@ -6,6 +6,10 @@ Import presets from the package:
 #import "@preview/laskutys:1.0.0": PRESET_OCEAN
 ```
 
+## PRESET_MINIMAL (default)
+
+![PRESET_MINIMAL](/docs/images/preset_minimal.svg)
+
 ## PRESET_OCEAN
 
 ![PRESET_OCEAN](/docs/images/preset_ocean.svg)
