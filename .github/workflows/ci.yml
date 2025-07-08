@@ -121,7 +121,7 @@ jobs:
         uses: typst-community/setup-typst@v4
 
       - name: Install package locally
-        run: showman package ./typst.toml -n preview
+        run: just install preview
 
       - name: Build
         run: typst compile template/main.typ --root .

@@ -28,3 +28,6 @@ format:
     typstyle -i .
     cd rust_tools;\
     cargo fmt
+
+install target:
+    showman package ./typst.toml -o -n {{target}}
