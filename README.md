@@ -17,7 +17,7 @@ Among other things, this template features:
 
 ## Usage
 
-See [/src/components/invoice.typ](https://github.com/TheJiahao/typst-finnish-invoice/blob/5fa8919f41abc17dc045f23db3bab746b2b28149/src/components/invoice.typ) for all parameters.
+See [API documentation](/docs/api.md) for all arguments.
 
 ```typst
 #import "@preview/laskutys:1.0.0": invoice
@@ -156,14 +156,35 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 
 > [!TIP]
 > The `DEFAULT_COLORS` is needed if you don't want to override all colors.
+> You can also override any other preset.
 
-See Typst [documentation](https://typst.app/docs/reference/visualize/color/) for more colors and `/src/presets.typ` for configurable colors.
+See Typst [documentation](https://typst.app/docs/reference/visualize/color/) for more colors and [API documentation](/docs/api.md)  for configurable colors.
 There are also some presets available, see [Color presets](/docs/color_presets.md).
 
 ### Change language
 
+Pass ISO 639 language code as `lang`.
+Supported languages are
+
+- `en`: English (default)
+- `fi`: Finnish
+- `sv`: Swedish
+
+```typst
+#import "@preview/laskutys:1.0.0": invoice
+
+#let data = yaml("data.yaml")
+
+#invoice(
+  ...
+  lang: "fi",
+  data,
+)
+```
+
 ## Documentation
 
+- [API](/docs/api.md)
 - [Development](/docs/development.md)
 - [Architecture](/docs/architecture.md)
 - [Color presets](/docs/color_presets.md)
