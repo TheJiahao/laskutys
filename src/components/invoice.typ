@@ -14,22 +14,22 @@
   /// Footnotes, displayd as is.
   /// For example, it can contain contacts, reverse charge if payer pays VAT, etc.
   footnotes: [],
-  // Days to due date
+  /// Days to due date
   payment_terms: 14,
   invoice_number: auto,
   logo: none,
   seller: none,
   recipient: none,
-  // Default VAT rate
+  /// Default VAT rate
   vat_rate: decimal("0.255"),
   iban: none,
   bic: none,
-  // ISO 11649 reference number that begins with RF, only digits after RF are supported.
-  // Leading zeros after check digits are removed.
+  /// ISO 11649 reference number that begins with RF, only digits after RF are supported.
+  /// Leading zeros after check digits are removed.
   reference_number: auto,
-  // Show bank barcode
+  /// Show bank barcode
   barcode: true,
-  // Show EPC QR code
+  /// Show EPC QR code
   qrcode: true,
   font: auto,
   items,
