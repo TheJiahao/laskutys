@@ -1,13 +1,13 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/components/item_row.typ": item_row
-#import "/src/config.typ": COLORS, CURRENCY
+#import "/src/config.typ": DEFAULT_COLORS, CURRENCY
 
-#let item_list(items, colors: COLORS) = {
+#let item_list(items, colors: DEFAULT_COLORS) = {
   table(
     columns: 5,
     align: (left, right, right, right, right),
     fill: (_, y) => if calc.even(y) and y > 0 {
-      colors.BG_PASSIVE
+      colors.bg_passive
     },
     stroke: none,
     inset: (x: 0.75em, y: 0.5em),
@@ -21,7 +21,7 @@
       [#translate("vat")~(%)],
       [#translate("price_with_vat")~(#CURRENCY)],
     ),
-    table.hline(stroke: colors.ACTIVE),
+    table.hline(stroke: colors.active),
 
     ..for item in items {
       item_row(item)

@@ -7,7 +7,7 @@
 #import "/src/components/payment_info.typ": payment_info
 #import "/src/utils/get_invoice_number.typ": get_invoice_number
 #import "/src/utils/get_reference_number.typ": get_reference_number
-#import "/src/config.typ": COLORS
+#import "/src/config.typ": DEFAULT_COLORS
 
 /// Invoice component.
 ///
@@ -48,7 +48,7 @@
   /// Show EPC QR code
   qrcode: true,
   font: auto,
-  colors: COLORS,
+  colors: DEFAULT_COLORS,
   items,
 ) = {
   set text(lang: lang, size: 12pt)
