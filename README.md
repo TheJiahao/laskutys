@@ -157,7 +157,8 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 > [!TIP]
 > The `DEFAULT_COLORS` is needed if you don't want to override all colors.
 
-See Typst [documentation](https://typst.app/docs/reference/visualize/color/) for more colors and [`/src/config.typ`](https://github.com/TheJiahao/typst-finnish-invoice/blob/7791f5d04f251ebffcf4425c7b9f95a69944adc0/src/config.typ) for configurable colors.
+See Typst [documentation](https://typst.app/docs/reference/visualize/color/) for more colors and `/src/presets.typ` for configurable colors.
+There are also some presets available, see [Color presets](/docs/color_presets.md).
 
 ### Change language
 
@@ -165,6 +166,7 @@ See Typst [documentation](https://typst.app/docs/reference/visualize/color/) for
 
 - [Development](/docs/development.md)
 - [Architecture](/docs/architecture.md)
+- [Color presets](/docs/color_presets.md)
 
 ## License
 

@@ -9,3 +9,7 @@ Import presets from the package:
 ## PRESET_OCEAN
 
 ![PRESET_OCEAN](/docs/images/preset_ocean.svg)
+
+## PRESET_DESERT
+
+![PRESET_DESERT](/docs/images/preset_desert.svg)

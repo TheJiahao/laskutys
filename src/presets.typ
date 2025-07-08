@@ -10,3 +10,8 @@
   bg_passive: aqua.lighten(80%),
 )
 
+#let PRESET_DESERT = (
+  active: color.hsl(25deg, 100%, 40%),
+  passive: color.hsl(9.2deg, 80%, 85%),
+  bg_passive: color.hsl(44.9deg, 70%, 95%),
+)
