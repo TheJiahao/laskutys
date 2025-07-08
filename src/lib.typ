@@ -37,6 +37,10 @@
   set text(font: font) if (font != auto)
   set page(footer: contacts)
 
+  show table.cell: c => if c.y == 0 {
+    align(bottom, strong(c))
+  } else { c }
+
   if invoice_number == auto {
     invoice_number = get_invoice_number(date)
   }

@@ -3,10 +3,6 @@
 #import "/src/config.typ": COLORS, CURRENCY
 
 #let item_list(items) = {
-  show table.cell: c => if c.y == 0 {
-    strong(c)
-  } else { c }
-
   table(
     columns: (3fr, auto, auto, auto, 2fr),
     align: (left, right, right, right, right),
