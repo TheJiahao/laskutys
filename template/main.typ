@@ -4,7 +4,7 @@
 
 #invoice(
   date: datetime(year: 2025, month: 09, day: 30),
-  logo: image("/src/logo.svg", height: 4em),
+  logo: image("/template/logo.svg", height: 4em),
   iban: "FI2112345600000785",
   bic: "OKOYFIHH",
   seller: (
