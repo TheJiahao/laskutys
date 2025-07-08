@@ -1,7 +1,7 @@
 #import "/src/components/vat_row.typ": vat_row
 #import "/src/utils/translate.typ": translate
 #import "/src/utils/vat_calculation.typ": get_sum_row, preprocess
-#import "/src/config.typ": DEFAULT_COLORS, CURRENCY, FONT_SIZES
+#import "/src/config.typ": CURRENCY, DEFAULT_COLORS, FONT_SIZES
 
 /// -> content
 #let vat_section(items, colors: DEFAULT_COLORS) = {

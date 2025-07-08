@@ -1,6 +1,6 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/components/item_row.typ": item_row
-#import "/src/config.typ": DEFAULT_COLORS, CURRENCY
+#import "/src/config.typ": CURRENCY, DEFAULT_COLORS
 
 #let item_list(items, colors: DEFAULT_COLORS) = {
   table(

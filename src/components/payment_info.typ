@@ -4,7 +4,7 @@
   check_reference_number, iban as iban_constructor,
 )
 #import "/src/utils/call_wasm.typ": call_wasm
-#import "/src/config.typ": CURRENCY, FONT_SIZES, DEFAULT_COLORS
+#import "/src/config.typ": CURRENCY, DEFAULT_COLORS, FONT_SIZES
 #import "/src/components/bank_barcode.typ": bank_barcode
 #import "/src/components/bank_qrcode.typ": bank_qr_code
 
