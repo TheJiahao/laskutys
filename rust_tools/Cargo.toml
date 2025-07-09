@@ -26,4 +26,3 @@ panic = 'abort'
 [dev-dependencies]
 pretty_assertions = "1.4.1"
 rstest = "0.25.0"
-typstyle = "0.13.13"
