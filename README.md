@@ -207,7 +207,7 @@ footnotes: "Company Oy, Phone: +358 123 4567, Email: sales.person@company.com"
 ```
 
 > [!NOTE]
-> `date` and `logo` cannot be read from file since Typst cannot convert them.
+> `date` and `logo` cannot be read from non-Typst file since Typst cannot convert them.
 > Also, use quotes `"` for string containing newline `\n` or something that is converted incorrectly.
 
 ### Hide QR code or bank barcode
