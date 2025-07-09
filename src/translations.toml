@@ -33,7 +33,7 @@ price_with_vat = "Verollinen hinta"
 due_date = "Eräpäivä"
 beneficiary = "Saaja"
 reference_number = "Viitenumero"
-to_pay = "Maksettava"
+to_pay = "Maksettavaa"
 
 [lang.sv]
 invoice = "Faktura"
