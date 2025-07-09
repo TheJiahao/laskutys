@@ -60,3 +60,9 @@ Build Rust binary (dev) and copy WASM file:
 ```console
 just dev
 ```
+
+Render all preview images
+
+```console
+just render
+```
