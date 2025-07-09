@@ -26,6 +26,3 @@ panic = 'abort'
 [dev-dependencies]
 pretty_assertions = "1.4.1"
 rstest = "0.25.0"
-
-[workspace]
-members = ["tools/cargo-bin"]
