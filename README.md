@@ -145,7 +145,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 
 > [!TIP]
 > The `DEFAULT_COLORS` is needed if you don't want to override all colors.
-> You can also override any other preset.
+> You can also override any other preset similarly.
 
 See Typst [documentation](https://typst.app/docs/reference/visualize/color/) for more colors and [API documentation](/docs/api.md)  for configurable colors.
 There are also some presets available, see [Color presets](/docs/color_presets.md).
