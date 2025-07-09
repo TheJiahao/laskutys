@@ -29,6 +29,15 @@ This package is developed in Ubuntu 24.04 (WSL) but the instructions should work
     > `install-dev-deps` is mostly for CI.
     > It does not install crates, since they are installed with cargo-install that caches them
 
+### Installing package locally
+
+1. Install [showman](https://typst.app/universe/package/showman/)
+1. Install package locally to `@preview` (run in root)
+
+    ```console
+    showman package ./typst.toml -n preview -o    
+    ```
+
 ## Commands
 
 Run tests:
@@ -66,3 +75,6 @@ Render all preview images
 ```console
 just render
 ```
+
+> [!IMPORTANT]
+> Install package locally before running the render command
