@@ -134,7 +134,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 )
 ```
 
-[![Changing colors](/docs/images/example_customize_colors.svg)](/examples/customize_colors.typ)
+[![Changing colors](/docs/images/example_customize_colors.svg)](/examples/customize_colors/main.typ)
 
 > [!TIP]
 > The `DEFAULT_COLORS` is needed if you don't want to override all colors.
