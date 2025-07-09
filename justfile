@@ -31,3 +31,11 @@ format:
 
 install target:
     showman package ./typst.toml -o -n {{target}}
+
+img_source_dir := "docs/images"
+
+render:
+    cd .;\
+    for file in `ls {{img_source_dir}}/*.typ`;\
+        do typst compile $file -f svg --root .;\
+    done
