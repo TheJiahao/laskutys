@@ -27,18 +27,18 @@ jobs:
         uses: baptiste0928/cargo-install@v3
         with:
           crate: just
-        
+
       - name: Install Rust tools
         run: just install-dev-deps
-        
+
       - name: Install Typstyle
         uses: baptiste0928/cargo-install@v3
         with:
           crate: typstyle
-        
+
       - name: Lint
         run: just lint-fix
-      
+
       - name: Format
         run: just format
 
@@ -48,7 +48,6 @@ jobs:
           author_name: github-actions[bot]
           author_email: github-ations[bot]@users.noreply.github.com
           message: "Format"
-
 
   test:
     name: Test
