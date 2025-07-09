@@ -8,15 +8,11 @@
   seller: (
     name: "Company Oy",
     business_id: "1234567-8",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
+    address: [Street 123\ 01234 City],
   ),
   recipient: (
     name: "Recipient Name",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
+    address: [Street 123\ 01234 City],
   ),
   colors: (
     ..DEFAULT_COLORS,

@@ -10,15 +10,11 @@
   seller: (
     name: "Company Oy",
     business_id: "1234567-8",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
+    address: [Street 123\ 01234 City],
   ),
   recipient: (
     name: "Recipient Name",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
+    address: [Talousosasto\ PL 55\ 01000 Helsinki],
   ),
   lang: "fi",
   footnotes: [Company Oy, Phone: +358 123 4567, Email: sales.person\@company.com],

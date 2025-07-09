@@ -36,16 +36,12 @@ See [API documentation](/docs/api.md) for all arguments.
   seller: (
     name: "Company Oy",
     business_id: "1234567-8",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
+    address: [Street 123\ 01234 City]
   ),
   /// Recipient can also have business_id
   recipient: (
     name: "Recipient Name",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
+    address: [Talousosasto\ PL 55\ 01000 Helsinki]
   ),
   /// fi: Finnish
   /// en: English (default)
@@ -127,21 +123,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 #let data = yaml("data.yaml")
 
 #invoice(
-  iban: "FI2112345600000785",
-  bic: "OKOYFIHH",
-  seller: (
-    name: "Company Oy",
-    business_id: "1234567-8",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
-  ),
-  recipient: (
-    name: "Recipient Name",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
-  ),
+  ...
   colors: (
     ..DEFAULT_COLORS
     active: blue,
@@ -152,7 +134,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 )
 ```
 
-![Changing colors](/docs/images/example_customize_colors.svg)
+[![Changing colors](/docs/images/example_customize_colors.svg)](/examples/customize_colors.typ)
 
 > [!TIP]
 > The `DEFAULT_COLORS` is needed if you don't want to override all colors.

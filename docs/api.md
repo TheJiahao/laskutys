@@ -31,13 +31,13 @@ The arguments `seller` and `recipient` are expected to be dictionaries like:
 (
     name: "Company Oy",
     business_id: "1234567-8",
-    street: "Street 123",
-    zip_code: "01234",
-    city: "City",
+    address: [Street 123\ 01234 City],
 )
 ```
 
 The key `business_id` is optional for recipient and required for seller.
+The key `address` is displayed as is.
+`address` can also be `str` type, in that case, use `\n` as newline.
 
 ## Items
 
