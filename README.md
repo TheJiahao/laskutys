@@ -87,7 +87,7 @@ Output of the above code:
 > Pass `unit_price` and `vat_rate` as string, so that they can be converted to decimal without errors.
 > This avoids rounding errors due to imprecision of floating-point numbers.
 
-The data can also be defined directly in Typst as array:
+The data can also be defined directly in Typst as an array:
 
 ```typst
 #let data = (
@@ -112,6 +112,13 @@ The data can also be defined directly in Typst as array:
 ```
 
 You can also use other [loader functions](https://typst.app/docs/reference/data-loading/) if they can produce an array in the same format.
+
+## Documentation
+
+- [API](/docs/api.md)
+- [Development](/docs/development.md)
+- [Architecture](/docs/architecture.md)
+- [Color presets](/docs/color_presets.md)
 
 ## Examples
 
@@ -203,14 +210,26 @@ footnotes: "Company Oy, Phone: +358 123 4567, Email: sales.person@company.com"
 > `date` and `logo` cannot be read from file since Typst cannot convert them.
 > Also, use quotes `"` for string containing newline `\n` or something that is converted incorrectly.
 
-## Documentation
+### Hide QR code or bank barcode
 
-- [API](/docs/api.md)
-- [Development](/docs/development.md)
-- [Architecture](/docs/architecture.md)
-- [Color presets](/docs/color_presets.md)
+Set `qrcode` or `barcode` to `false`:
+
+```typst
+...
+
+#invoice(
+  ...
+  qrcode: false,
+  barcode: false,
+)
+```
+
+- Bank barcode supports only Finnish IBAN, so disable it if non-Finnish IBAN is used.
+- EPC QR code supports non-Finnish IBAN [^epc_qr]
 
 ## License
 
 The project is licensed under [MIT-license](/LICENSE).
 Licenses of libraries used in this project are listed in [/licenses](/licenses/).
+
+[^epc_qr]: European Payments Council, Quick Response Code: Guidelines to Enable Data Capture for the Initiation of a SEPA Credit Transfer, https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation
