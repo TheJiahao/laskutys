@@ -164,6 +164,45 @@ Supported languages are
 )
 ```
 
+### Read configuration from file
+
+Using [spread](https://typst.app/docs/reference/foundations/arguments/) syntax, configurations can also be read from a file.
+For instance, from a YAML file.
+
+```typst
+#import "@preview/laskutys:1.0.0": *
+
+#let data = yaml("data.yaml")
+#let config = yaml("config.yaml")
+
+#invoice(
+  ..config,
+  data,
+)
+```
+
+YAML config file
+
+```yaml
+iban: FI2112345600000785
+bic: OKOYFIHH
+
+seller:
+  name: Company Oy
+  business_id: 1234567-8
+  address: "Street 123\n01234 City"
+
+recipient:
+  name: Recipient Name
+  address: "Street 123\n01234 City"
+
+footnotes: "Company Oy, Phone: +358 123 4567, Email: sales.person@company.com"
+```
+
+> [!NOTE]
+> `date` and `logo` cannot be read from file since Typst cannot convert them.
+> Also, use quotes `"` for string containing newline `\n` or something that is converted incorrectly.
+
 ## Documentation
 
 - [API](/docs/api.md)
