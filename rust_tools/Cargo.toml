@@ -29,7 +29,3 @@ rstest = "0.25.0"
 
 [workspace]
 members = ["tools/cargo-bin"]
-
-[package.metadata.bin]
-typstyle = { version = "0.13.13" }
-tytanic = { version = "0.2.2" }
