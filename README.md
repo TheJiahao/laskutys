@@ -210,6 +210,31 @@ footnotes: "Company Oy, Phone: +358 123 4567, Email: sales.person@company.com"
 > `date` and `logo` cannot be read from non-Typst file since Typst cannot convert them.
 > Also, use quotes `"` for string containing newline `\n` or something that is converted incorrectly.
 
+### Automated invoice generation
+
+Typst CLI can pass [inputs](https://github.com/typst/typst/pull/2894) to Typst file using
+
+```console
+typst compile file.typ --input key1=val1`
+```
+
+The key value pairs can be accessed in Typst file using [`sys.inputs`](https://typst.app/docs/reference/foundations/sys/) as a dictionary.
+
+```typst
+#import "@preview/laskutys:1.0.0": *
+
+#let data = yaml("data.yaml")
+#let config = sys.inputs
+
+#invoice(
+  ..config,
+  data,
+)
+```
+
+Since all values are strings, some preprocessing is required.
+For example, the values can be JSON strings which can be parsed using [`json`](https://typst.app/docs/reference/data-loading/json/#definitions-decode).
+
 ### Hide QR code or bank barcode
 
 Set `qrcode` or `barcode` to `false`:
