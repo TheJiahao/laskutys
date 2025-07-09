@@ -32,10 +32,14 @@ format:
 install target:
     showman package ./typst.toml -o -n {{target}}
 
-img_source_dir := "docs/images"
+img_dir := "docs/images"
 
-render:
+render-thumbnail:
+    typst compile template/main.typ {{img_dir}}/thumbnail.png --root .
+    typst compile template/main.typ {{img_dir}}/thumbnail.svg --root .
+
+render: render-thumbnail
     cd .;\
-    for file in `ls {{img_source_dir}}/*.typ`;\
+    for file in `ls {{img_dir}}/*.typ`;\
         do typst compile $file -f svg --root .;\
     done
