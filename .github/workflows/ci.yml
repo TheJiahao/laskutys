@@ -14,19 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache Rust dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-            target
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-
-      - name: Install Just
-        uses: baptiste0928/cargo-install@v3
-        with:
-          crate: just
+      - name: Set up
+        uses: ./.github/workflows/setup-action
 
       - name: Install Rust tools
         run: just install-dev-deps
@@ -56,22 +45,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache Rust dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-            target
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-
-      - name: Add WASM target
-        run: rustup target add wasm32-unknown-unknown
-
-      - name: Install Just
-        uses: baptiste0928/cargo-install@v3
-        with:
-          crate: just
+      - name: Set up
+        uses: ./.github/workflows/setup-action
 
       - name: Install Tytanic
         uses: baptiste0928/cargo-install@v3
@@ -91,22 +66,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache Rust dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-            target
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-
-      - name: Add WASM target
-        run: rustup target add wasm32-unknown-unknown
-
-      - name: Install Just
-        uses: baptiste0928/cargo-install@v3
-        with:
-          crate: just
+      - name: Set up
+        uses: ./.github/workflows/setup-action
 
       - name: Install showman
         uses: BSFishy/pip-action@v1
