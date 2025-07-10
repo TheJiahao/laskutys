@@ -27,21 +27,19 @@ See [API documentation](/docs/api.md) for all arguments.
 #invoice(
   /// Optional, defaults to today
   date: datetime(year: 2025, month: 09, day: 30),
-  /// Optional
-  invoice_number: "0123456",
   /// Optional logo, displayed as is
   logo: image("logo.svg", height: 4em),
   iban: "FI2112345600000785",
-  bic: "OKOYFIHH",
+  bic: "NDEAFIHH",
   seller: (
-    name: "Company Oy",
+    name: "Yritys Oy",
     business_id: "1234567-8",
-    address: [Street 123\ 01234 City]
+    address: [Talousosasto\ PL 12\ 00100 Helsinki],
   ),
   /// Recipient can also have business_id
   recipient: (
-    name: "Recipient Name",
-    address: [Talousosasto\ PL 55\ 01000 Helsinki]
+    name: "Kuluttaja Nimi",
+    address: [Kotikatu 1\ 00100 Helsinki],
   ),
   /// fi: Finnish
   /// en: English (default)
@@ -55,30 +53,32 @@ See [API documentation](/docs/api.md) for all arguments.
 YAML data of items:
 
 ```yaml
-- description: Apple
+- description: Ruoka
   quantity: 10
   # Unit price including VAT
   unit_price: "2"
   vat_rate: "0.14"
 
-- description: Battery AA
+- description: AA paristo
   quantity: 2
-  unit_price: "2"
+  unit_price: "1.99"
   vat_rate: "0.255"
 
-- description: Newspaper
+- description: Sanomalehti
   quantity: 3
   unit_price: "9.99"
   vat_rate: "0.10"
 
-- description: Phone
+- description: "!Phone"
   quantity: 1
-  unit_price: "10000"
-  vat_rate: "0"
+  unit_price: "1000"
 
-- description: Item with default VAT
+  # \_ is non breaking space
+- description: "Sijoituskulta, AVL\_43\_a\_§"
   quantity: 3
   unit_price: "10"
+  vat_rate: "0"
+
 ```
 
 Output of the above code:
