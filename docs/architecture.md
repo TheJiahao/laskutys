@@ -29,7 +29,7 @@ The content of Typst files and directories:
 - `lib.typ`: entrypoint, exposes public functions
 - `themes.typ`: color themes
 
-The dependency graph components:
+The dependency graph of components:
 
 ```mermaid
 graph LR
