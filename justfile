@@ -39,8 +39,8 @@ install target:
 img_dir := "docs/images"
 
 render-thumbnail:
-    typst compile template/main.typ {{img_dir}}/thumbnail.png --root .
-    typst compile template/main.typ {{img_dir}}/thumbnail.svg --root .
+    typst compile template/main.typ {{img_dir}}/thumbnail.png --root . --ppi 250
+    cwebp {{img_dir}}/thumbnail.png -lossless -o {{img_dir}}/thumbnail.webp
 
 render: render-thumbnail
     cd .;\
