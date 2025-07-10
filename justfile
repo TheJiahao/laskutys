@@ -11,6 +11,10 @@ dev:
 install-dev-deps:
     rustup component add rustfmt clippy
 
+install-cli:
+    cargo install cargo-binstall --locked
+    cargo binstall typstyle tytanic typst-cli --locked
+
 test:
     tt run
     cd rust_tools;\
