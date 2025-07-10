@@ -54,6 +54,7 @@ The argument `items` are expected to be an array of dictionaries like:
 
 The key `vat_rate` is optional.
 If missing, default VAT rate is used.
+`unit_price` is assumed to include VAT.
 
 > [!IMPORTANT]
 > Write `unit_price` and `vat_rate` as string, so that they can be converted to decimal without errors.

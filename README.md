@@ -57,6 +57,7 @@ YAML data of items:
 ```yaml
 - description: Apple
   quantity: 10
+  # Unit price including VAT
   unit_price: "2"
   vat_rate: "0.14"
 
