@@ -18,6 +18,23 @@ This package is developed in Ubuntu 24.04 (WSL) but the instructions should work
     cargo install just
     ```
 
+1. Install [cwebp](https://developers.google.com/speed/webp/download) (libwebp).
+   For Ubuntu, run
+
+   ```console
+    sudo apt install webp
+   ```
+
+    For Windows, install with Scoop or Winget
+
+    ```console
+    scoop install webp
+    ```
+
+    ```console
+    winget install libwebp    
+    ```
+
 1. Install development tools
 
     ```console
