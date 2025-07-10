@@ -81,7 +81,7 @@ YAML data of items:
 ```
 
 Output of the above code:
-![Example generated invoice](/docs/images/thumbnail.svg)
+![Example generated invoice](/docs/images/thumbnail.webp)
 
 > [!IMPORTANT]
 > Pass `unit_price` and `vat_rate` as string, so that they can be converted to decimal without errors.
