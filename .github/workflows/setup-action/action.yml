@@ -6,6 +6,8 @@ runs:
   steps:
     - name: Cache Rust dependencies
       uses: Swatinem/rust-cache@v2
+      with:
+        workspaces: rust_tools
 
     - name: Install Just
       uses: baptiste0928/cargo-install@v3
