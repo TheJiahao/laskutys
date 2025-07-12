@@ -10,7 +10,6 @@
   ).map(str))
 
   let result = call_wasm(consolidate_vat, items)
-    .pairs()
     .sorted()
     .map(pair => pair.map(decimal))
     .map(((vat_rate, total_with_vat)) => {
