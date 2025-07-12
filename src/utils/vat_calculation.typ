@@ -10,7 +10,6 @@
   ).map(str))
 
   let result = call_wasm(consolidate_vat, items)
-    .sorted()
     .map(pair => pair.map(decimal))
     .map(((vat_rate, total_with_vat)) => {
       let total_without_vat = total_with_vat / (1 + vat_rate)

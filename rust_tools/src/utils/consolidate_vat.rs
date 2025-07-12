@@ -11,11 +11,14 @@ pub fn consolidate_vat(data: &[u8]) -> Result<Vec<u8>, CBORError> {
     cbor_wrapper(data, |x: Vec<_>| Ok(calculate_vat(&x)))
 }
 
+/// Calculates total VAT by VAT rate.
+/// Returns pairs of (VAT rate, total with VAT) sorted by VAT rate.
 fn calculate_vat(data: &[(Decimal, Decimal)]) -> Vec<(Decimal, Decimal)> {
     data.iter()
         .into_group_map_by(|(vat_rate, _)| vat_rate)
         .into_iter()
         .map(|(key, value)| (*key, value.iter().map(|(_, v)| v).sum()))
+        .sorted()
         .collect()
 }
 
