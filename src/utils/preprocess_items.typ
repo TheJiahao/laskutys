@@ -8,10 +8,10 @@
   assert(type(default_vat_rate) == decimal)
 
   for item in items {
-    if "vat_rate" in items {
+    if "vat-rate" in items {
       assert(
         type(item.vat-rate) in (str, decimal),
-        message: "Use decimal or str in vat_rate of items",
+        message: "Use decimal or str in vat-rate of items",
       )
     }
 
@@ -22,7 +22,7 @@
   }
 
   items.map(item => {
-    let vat-rate = decimal(item.at("vat_rate", default: default_vat_rate))
+    let vat-rate = decimal(item.at("vat-rate", default: default_vat_rate))
     let quantity = decimal(item.quantity)
     let unit-price-with-vat = decimal(item.unit-price)
     let unit-price-without-vat = decimal(item.unit-price) / (1 + vat-rate)
