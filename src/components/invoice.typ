@@ -3,7 +3,7 @@
 #import "/src/components/item-row.typ": item-row
 #import "/src/components/item-list.typ": item-list
 #import "/src/components/header.typ": header
-#import "/src/components/vat_section.typ": vat_section
+#import "/src/components/vat-section.typ": vat-section
 #import "/src/components/payment-info.typ": payment-info
 #import "/src/utils/get-invoice-number.typ": get-invoice-number
 #import "/src/utils/get-reference-number.typ": get-reference-number
@@ -84,7 +84,7 @@
   grid(
     columns: (1fr, 3fr),
     align: (left, right),
-    [], vat_section(items, colors: colors),
+    [], vat-section(items, colors: colors),
   )
   payment-info(
     beneficiary: seller.name,

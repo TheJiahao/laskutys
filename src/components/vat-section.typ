@@ -4,9 +4,9 @@
 #import "/src/config.typ": CURRENCY, DEFAULT-COLORS, FONT-SIZES
 
 /// -> content
-#let vat_section(items, colors: DEFAULT-COLORS) = {
+#let vat-section(items, colors: DEFAULT-COLORS) = {
   let result = preprocess(items)
-  let sum_row = get-sum-row(result)
+  let sum-row = get-sum-row(result)
 
   set text(size: FONT-SIZES.SMALL)
 
@@ -18,7 +18,7 @@
 
     table.header(
       [#translate("vat")~(%)],
-      [#translate("price_without_vat")~(#CURRENCY)],
+      [#translate("price-without-vat")~(#CURRENCY)],
       [#translate("vat")~(#CURRENCY)],
       [#translate("price-with-vat")~(#CURRENCY)],
     ),
@@ -29,6 +29,6 @@
     },
 
     table.hline(stroke: colors.active),
-    strong(translate("total")), ..sum_row.map(strong),
+    strong(translate("total")), ..sum-row.map(strong),
   )
 }
