@@ -1,4 +1,4 @@
-#import "@preview/laskutys:1.0.0": DEFAULT_COLORS, invoice
+#import "@preview/laskutys:1.0.0": DEFAULT-COLORS, invoice
 
 #let data = yaml("data.yaml")
 
@@ -15,7 +15,7 @@
     address: [Street 123\ 01234 City],
   ),
   colors: (
-    ..DEFAULT_COLORS,
+    ..DEFAULT-COLORS,
     active: blue,
     bg-passive: teal.lighten(85%),
     passive: teal,
