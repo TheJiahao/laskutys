@@ -1,5 +1,5 @@
 #import "/src/utils/translate.typ": translate
-#import "/src/utils/preprocess_items.typ": preprocess_items
+#import "/src/utils/preprocess-items.typ": preprocess-items
 #import "/src/components/item_row.typ": item_row
 #import "/src/components/item_list.typ": item_list
 #import "/src/components/header.typ": header
@@ -67,7 +67,7 @@
     reference-number = get_reference_number(invoice-number)
   }
 
-  let items = preprocess_items(items, vat-rate)
+  let items = preprocess-items(items, vat-rate)
   let sum = items.map(item => item.total-price).sum()
   let due-date = date + duration(days: payment-terms)
 

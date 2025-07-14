@@ -1,4 +1,4 @@
-#import "/src/utils/preprocess_items.typ": preprocess_items
+#import "/src/utils/preprocess-items.typ": preprocess-items
 
 #let data_without_vat = (
   (
@@ -14,7 +14,7 @@
 )
 
 #assert(
-  preprocess_items(data_without_vat, decimal("0.14")).all(item => (
+  preprocess-items(data_without_vat, decimal("0.14")).all(item => (
     item.vat-rate == decimal("0.14")
   )),
   message: "Default VAT rate is added",
@@ -34,7 +34,7 @@
 )
 
 #assert(
-  preprocess_items(data_with_vat, decimal("0.14")).all(item => (
+  preprocess-items(data_with_vat, decimal("0.14")).all(item => (
     item.total-price == item.unit_price_with_vat * item.quantity
   )),
   message: "Total price is calculated",
