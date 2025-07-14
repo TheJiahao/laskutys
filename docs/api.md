@@ -12,16 +12,16 @@ Arguments for `invoice`.
 |`lang`|`str`|❌|`en`|Language as ISO 639 language code|
 |`date`|`datetime`|❌|`datetime.today()`|Invoice date|
 |`footnotes`|`array`|❌|`[]`|Footnotes, displayed as is. Can contain contacts, reverse charge info, etc.|
-|`payment_terms`|`int`|❌|`14`|Days to due date|
-|`invoice_number`|`auto \| str`|❌|`auto`|Invoice number, only numbers are supported|
+|`payment-terms`|`int`|❌|`14`|Days to due date|
+|`invoice-number`|`auto \| str`|❌|`auto`|Invoice number, only numbers are supported|
 |`logo`|`image \| none`|❌|`none`|Seller logo|
-|`vat_rate`|`decimal`|❌|`decimal("0.255")`|Default VAT rate|
-|`reference_number`|`auto \| str`|❌|`auto`|ISO 11649 reference number (begins with RF, only digits after RF supported)|
+|`vat-rate`|`decimal`|❌|`decimal("0.255")`|Default VAT rate|
+|`reference-number`|`auto \| str`|❌|`auto`|ISO 11649 reference number (begins with RF, only digits after RF supported)|
 |`barcode`|`bool`|❌|`true`|Show bank barcode|
-|`show_barcode_text`|`bool`|❌|`true`|Show clear text above barcode|
+|`show-barcode-text`|`bool`|❌|`true`|Show clear text above barcode|
 |`qrcode`|`bool`|❌|`true`|Show EPC QR code|
 |`font`|`auto \| str`|❌|`auto`|Text font|
-|`colors`|`dictionary`|❌|`DEFAULT_COLORS`|Color settings|
+|`colors`|`dictionary`|❌|`DEFAULT-COLORS`|Color settings|
 
 ## Seller and recipient
 
@@ -47,17 +47,17 @@ The argument `items` are expected to be an array of dictionaries like:
 (
     description: "Apple",
     quantity: 10,
-    unit_price: "2",
-    vat_rate: "0.14",
+    unit-price: "2",
+    vat-rate: "0.14",
 )
 ```
 
-The key `vat_rate` is optional.
+The key `vat-rate` is optional.
 If missing, default VAT rate is used.
-`unit_price` is assumed to include VAT.
+`unit-price` is assumed to include VAT.
 
 > [!IMPORTANT]
-> Write `unit_price` and `vat_rate` as string, so that they can be converted to decimal without errors.
+> Write `unit-price` and `vat-rate` as string, so that they can be converted to decimal without errors.
 > This avoids rounding errors due to imprecision of floating-point numbers.
 
 ## Colors
