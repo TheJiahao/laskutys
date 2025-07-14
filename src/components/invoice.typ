@@ -5,7 +5,7 @@
 #import "/src/components/header.typ": header
 #import "/src/components/vat_section.typ": vat_section
 #import "/src/components/payment_info.typ": payment_info
-#import "/src/utils/get_invoice_number.typ": get_invoice_number
+#import "/src/utils/get-invoice-number.typ": get-invoice-number
 #import "/src/utils/get_reference_number.typ": get_reference_number
 #import "/src/config.typ": DEFAULT-COLORS
 
@@ -60,7 +60,7 @@
   } else { c }
 
   if invoice-number == auto {
-    invoice-number = get_invoice_number(date)
+    invoice-number = get-invoice-number(date)
   }
 
   if reference-number == auto {
