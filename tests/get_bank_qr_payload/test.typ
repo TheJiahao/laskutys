@@ -1,7 +1,7 @@
-#import "/src/utils/get_bank_qr_payload.typ": get_bank_qr_payload
+#import "/src/utils/get-bank-qr-payload.typ": get-bank-qr-payload
 
 #assert.eq(
-  get_bank_qr_payload(
+  get-bank-qr-payload(
     decimal("100"),
     "Ben",
     "FI79 4405 2020 0360 82",
@@ -27,7 +27,7 @@
 )
 
 #assert.eq(
-  get_bank_qr_payload(
+  get-bank-qr-payload(
     decimal("100"),
     "Ben",
     "FI7944052020036082",
@@ -53,7 +53,7 @@
 )
 
 #assert.eq(
-  get_bank_qr_payload(
+  get-bank-qr-payload(
     decimal("100"),
     "Ben",
     "FI7944052020036082",
@@ -79,7 +79,7 @@
 )
 
 #assert.eq(
-  get_bank_qr_payload(
+  get-bank-qr-payload(
     decimal("100"),
     "Ben",
     "FI5810171000000122",
@@ -105,7 +105,7 @@
 )
 
 #assert.eq(
-  get_bank_qr_payload(
+  get-bank-qr-payload(
     decimal("100.078"),
     "Ben",
     "FI5810171000000122",
@@ -131,7 +131,7 @@
 )
 
 #assert.eq(
-  get_bank_qr_payload(
+  get-bank-qr-payload(
     decimal("99.072"),
     "Ben",
     "FI5810171000000122",

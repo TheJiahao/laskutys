@@ -1,6 +1,6 @@
 #import "@preview/oxifmt:1.0.0": strfmt
 #import "@preview/tiaoma:0.3.0": qrcode
-#import "/src/utils/get_bank_qr_payload.typ": get_bank_qr_payload
+#import "/src/utils/get-bank-qr-payload.typ": get-bank-qr-payload
 
 /// -> content
 #let bank_qr_code(
@@ -20,7 +20,7 @@
     message: "Amount must be between 0.01 and 999999999.99",
   )
 
-  let payload = get_bank_qr_payload(
+  let payload = get-bank-qr-payload(
     amount,
     beneficiary,
     iban,
