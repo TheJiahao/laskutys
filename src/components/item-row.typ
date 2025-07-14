@@ -1,6 +1,6 @@
 #import "/src/utils/formatter.typ": formatter
 
-#let item_row(data) = {
+#let item-row(data) = {
   (
     [#data.description],
     [#formatter("{:.2}", data.unit-price-without-vat)],
