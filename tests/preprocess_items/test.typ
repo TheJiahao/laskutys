@@ -15,7 +15,7 @@
 
 #assert(
   preprocess_items(data_without_vat, decimal("0.14")).all(item => (
-    item.vat_rate == decimal("0.14")
+    item.vat-rate == decimal("0.14")
   )),
   message: "Default VAT rate is added",
 )
@@ -35,7 +35,7 @@
 
 #assert(
   preprocess_items(data_with_vat, decimal("0.14")).all(item => (
-    item.total_price == item.unit_price_with_vat * item.quantity
+    item.total-price == item.unit_price_with_vat * item.quantity
   )),
   message: "Total price is calculated",
 )

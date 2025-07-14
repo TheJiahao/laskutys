@@ -14,7 +14,7 @@
 
     table.header(
       translate("item"),
-      [#translate("unit_price_without_vat")~(#CURRENCY)],
+      [#translate("unit-price-without-vat")~(#CURRENCY)],
       translate(
         "quantity",
       ),

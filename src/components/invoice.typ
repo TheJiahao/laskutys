@@ -68,7 +68,7 @@
   }
 
   let items = preprocess_items(items, vat-rate)
-  let sum = items.map(item => item.total_price).sum()
+  let sum = items.map(item => item.total-price).sum()
   let due-date = date + duration(days: payment-terms)
 
   header(

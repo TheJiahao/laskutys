@@ -4,18 +4,18 @@
 
 /// -> array
 #let preprocess(items) = {
-  let items = items.map(((vat_rate, total_price)) => (
-    vat_rate,
-    total_price,
+  let items = items.map(((vat-rate, total-price)) => (
+    vat-rate,
+    total-price,
   ).map(str))
 
   let result = call-wasm(consolidate_vat, items)
     .map(pair => pair.map(decimal))
-    .map(((vat_rate, total_with_vat)) => {
-      let total_without_vat = total_with_vat / (1 + vat_rate)
-      let vat = total_with_vat - total_without_vat
+    .map(((vat-rate, total-with-vat)) => {
+      let total-without-vat = total-with-vat / (1 + vat-rate)
+      let vat = total-with-vat - total-without-vat
 
-      (vat_rate, vat, total_with_vat, total_without_vat)
+      (vat-rate, vat, total-with-vat, total-without-vat)
     })
 
   result
@@ -23,12 +23,12 @@
 
 #let get_sum_row(data) = {
   let vat = data.map(row => row.at(1)).sum()
-  let total_with_vat = data.map(row => row.at(2)).sum()
-  let total_without_vat = total_with_vat - vat
+  let total-with-vat = data.map(row => row.at(2)).sum()
+  let total-without-vat = total-with-vat - vat
 
   (
-    total_without_vat,
+    total-without-vat,
     vat,
-    total_with_vat,
+    total-with-vat,
   ).map(x => formatter("{:.2}", x))
 }
