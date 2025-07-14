@@ -1,4 +1,4 @@
-#import "/src/components/vat_row.typ": vat_row
+#import "/src/components/vat-row.typ": vat-row
 #import "/src/utils/translate.typ": translate
 #import "/src/utils/vat-calculation.typ": get-sum-row, preprocess
 #import "/src/config.typ": CURRENCY, DEFAULT-COLORS, FONT-SIZES
@@ -25,7 +25,7 @@
     table.hline(stroke: colors.passive),
 
     ..for entry in result {
-      vat_row(..entry)
+      vat-row(..entry)
     },
 
     table.hline(stroke: colors.active),
