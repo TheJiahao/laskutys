@@ -4,7 +4,7 @@
   check_reference_number, iban as iban_constructor,
 )
 #import "/src/utils/call_wasm.typ": call_wasm
-#import "/src/config.typ": CURRENCY, DEFAULT_COLORS, FONT_SIZES
+#import "/src/config.typ": CURRENCY, DEFAULT-COLORS, FONT-SIZES
 #import "/src/components/bank_barcode.typ": bank_barcode
 #import "/src/components/bank_qrcode.typ": bank_qr_code
 
@@ -23,7 +23,7 @@
   show_barcode_text: true,
   // Show EPC QR code
   qrcode: true,
-  colors: DEFAULT_COLORS,
+  colors: DEFAULT-COLORS,
 ) = {
   assert(beneficiary != none, message: "Missing beneficiary")
   assert(amount != none, message: "Missing amount")
@@ -44,7 +44,7 @@
   let iban = call_wasm(iban_constructor, iban)
 
   let payment_block = [
-    #set text(size: FONT_SIZES.SMALL)
+    #set text(size: FONT-SIZES.SMALL)
 
     #grid(
       columns: 2,

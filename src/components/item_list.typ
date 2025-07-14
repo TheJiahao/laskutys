@@ -1,8 +1,8 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/components/item_row.typ": item_row
-#import "/src/config.typ": CURRENCY, DEFAULT_COLORS
+#import "/src/config.typ": CURRENCY, DEFAULT-COLORS
 
-#let item_list(items, colors: DEFAULT_COLORS) = {
+#let item_list(items, colors: DEFAULT-COLORS) = {
   table(
     columns: 5,
     align: (left, right, right, right, right),
