@@ -3,7 +3,7 @@
 
 /// -> content
 #let header(
-  invoice_number,
+  invoice-number,
   date,
   recipient: none,
   seller: none,
@@ -20,7 +20,7 @@
     gutter: 2em,
 
     grid.cell(align: top)[
-      = #translate("invoice") \##invoice_number
+      = #translate("invoice") \##invoice-number
       #date.display()
     ],
 
