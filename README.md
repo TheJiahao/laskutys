@@ -56,28 +56,28 @@ YAML data of items:
 - description: Ruoka
   quantity: 10
   # Unit price including VAT
-  unit_price: "2"
-  vat_rate: "0.14"
+  unit-price: "2"
+  vat-rate: "0.14"
 
 - description: AA paristo
   quantity: 2
-  unit_price: "1.99"
-  vat_rate: "0.255"
+  unit-price: "1.99"
+  vat-rate: "0.255"
 
 - description: Sanomalehti
   quantity: 3
-  unit_price: "9.99"
-  vat_rate: "0.10"
+  unit-price: "9.99"
+  vat-rate: "0.10"
 
 - description: "!Phone"
   quantity: 1
-  unit_price: "1000"
+  unit-price: "1000"
 
   # \_ is non breaking space
 - description: "Sijoituskulta, AVL\_43\_a\_§"
   quantity: 3
-  unit_price: "10"
-  vat_rate: "0"
+  unit-price: "10"
+  vat-rate: "0"
 
 ```
 
@@ -85,7 +85,7 @@ Output of the above code:
 ![Example generated invoice](./docs/images/thumbnail.webp)
 
 > [!IMPORTANT]
-> Pass `unit_price` and `vat_rate` as string, so that they can be converted to decimal without errors.
+> Pass `unit-price` and `vat-rate` as string, so that they can be converted to decimal without errors.
 > This avoids rounding errors due to imprecision of floating-point numbers.
 
 The data can also be defined directly in Typst as an array:
@@ -95,19 +95,19 @@ The data can also be defined directly in Typst as an array:
   (
     description: "Apple",
     quantity: 10,
-    unit_price: "2",
-    vat_rate: "0.14",
+    unit-price: "2",
+    vat-rate: "0.14",
   ),
   (
     description: "Battery AA",
     quantity: 2,
-    unit_price: "2",
-    vat_rate: "0.255",
+    unit-price: "2",
+    vat-rate: "0.255",
   ),
   (
     description: "Item with default VAT",
     quantity: 3,
-    unit_price: "10",
+    unit-price: "10",
   ),
 ),
 ```
@@ -126,14 +126,14 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 ### Customize colors
 
 ```typst
-#import "@preview/laskutys:1.0.0": DEFAULT_COLORS, invoice
+#import "@preview/laskutys:1.0.0": DEFAULT-COLORS, invoice
 
 #let data = yaml("data.yaml")
 
 #invoice(
   ...
   colors: (
-    ..DEFAULT_COLORS
+    ..DEFAULT-COLORS
     active: blue,
     bg-passive: teal.lighten(85%),
     passive: teal,
@@ -145,7 +145,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 [![Changing colors](./docs/images/example_customize_colors.svg)](./examples/customize_colors/main.typ)
 
 > [!TIP]
-> The `DEFAULT_COLORS` is needed if you don't want to override all colors.
+> The `DEFAULT-COLORS` is needed if you don't want to override all colors.
 > You can also override any other preset similarly.
 
 See Typst [documentation](https://typst.app/docs/reference/visualize/color/) for more colors and [API documentation](./docs/api.md)  for configurable colors.
