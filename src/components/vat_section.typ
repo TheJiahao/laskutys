@@ -1,12 +1,12 @@
 #import "/src/components/vat_row.typ": vat_row
 #import "/src/utils/translate.typ": translate
-#import "/src/utils/vat_calculation.typ": get_sum_row, preprocess
+#import "/src/utils/vat-calculation.typ": get-sum-row, preprocess
 #import "/src/config.typ": CURRENCY, DEFAULT-COLORS, FONT-SIZES
 
 /// -> content
 #let vat_section(items, colors: DEFAULT-COLORS) = {
   let result = preprocess(items)
-  let sum_row = get_sum_row(result)
+  let sum_row = get-sum-row(result)
 
   set text(size: FONT-SIZES.SMALL)
 

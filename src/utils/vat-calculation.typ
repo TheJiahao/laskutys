@@ -21,7 +21,7 @@
   result
 }
 
-#let get_sum_row(data) = {
+#let get-sum-row(data) = {
   let vat = data.map(row => row.at(1)).sum()
   let total-with-vat = data.map(row => row.at(2)).sum()
   let total-without-vat = total-with-vat - vat
