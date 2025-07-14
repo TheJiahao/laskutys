@@ -73,4 +73,4 @@ The argument `colors` is expected to be a dictionary like:
 ```
 
 All values are [`color`](https://typst.app/docs/reference/visualize/color/) type.
-See [Color presets](/docs/color_presets.md) for presets.
+See [Color presets](./color_presets.md) for presets.

@@ -8,22 +8,22 @@ Import presets from the package:
 
 ## PRESET_MINIMAL (default)
 
-![PRESET_MINIMAL](/docs/images/preset_minimal.svg)
+![PRESET_MINIMAL](./images/preset_minimal.svg)
 
 ## PRESET_OCEAN
 
-![PRESET_OCEAN](/docs/images/preset_ocean.svg)
+![PRESET_OCEAN](./images/preset_ocean.svg)
 
 ## PRESET_DESERT
 
-![PRESET_DESERT](/docs/images/preset_desert.svg)
+![PRESET_DESERT](./images/preset_desert.svg)
 
 ## PRESET_FOREST
 
-![PRESET_FOREST](/docs/images/preset_forest.svg)
+![PRESET_FOREST](./images/preset_forest.svg)
 
 ## PRESET_ARCTIC
 
 Inspirated by GMK Arctic keycaps by Mcnos.
 
-![PRESET_ARCTIC](/docs/images/preset_arctic.svg)
+![PRESET_ARCTIC](./images/preset_arctic.svg)

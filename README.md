@@ -17,7 +17,7 @@ Among other things, this template features:
 
 ## Usage
 
-See [API documentation](/docs/api.md) for all arguments.
+See [API documentation](./docs/api.md) for all arguments.
 
 ```typst
 #import "@preview/laskutys:1.0.0": invoice
@@ -82,7 +82,7 @@ YAML data of items:
 ```
 
 Output of the above code:
-![Example generated invoice](/docs/images/thumbnail.webp)
+![Example generated invoice](./docs/images/thumbnail.webp)
 
 > [!IMPORTANT]
 > Pass `unit_price` and `vat_rate` as string, so that they can be converted to decimal without errors.
@@ -116,10 +116,10 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 
 ## Documentation
 
-- [API](/docs/api.md)
-- [Development](/docs/development.md)
-- [Architecture](/docs/architecture.md)
-- [Color presets](/docs/color_presets.md)
+- [API](./docs/api.md)
+- [Development](./docs/development.md)
+- [Architecture](./docs/architecture.md)
+- [Color presets](./docs/color_presets.md)
 
 ## Examples
 
@@ -142,14 +142,14 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 )
 ```
 
-[![Changing colors](/docs/images/example_customize_colors.svg)](/examples/customize_colors/main.typ)
+[![Changing colors](./docs/images/example_customize_colors.svg)](./examples/customize_colors/main.typ)
 
 > [!TIP]
 > The `DEFAULT_COLORS` is needed if you don't want to override all colors.
 > You can also override any other preset similarly.
 
-See Typst [documentation](https://typst.app/docs/reference/visualize/color/) for more colors and [API documentation](/docs/api.md)  for configurable colors.
-There are also some presets available, see [Color presets](/docs/color_presets.md).
+See Typst [documentation](https://typst.app/docs/reference/visualize/color/) for more colors and [API documentation](./docs/api.md)  for configurable colors.
+There are also some presets available, see [Color presets](./docs/color_presets.md).
 
 ### Change language
 
@@ -255,7 +255,7 @@ Set `qrcode` or `barcode` to `false`:
 
 ## License
 
-The project is licensed under the [MIT-0 license](/LICENSE).
-Licenses of libraries used in this project are listed in [/licenses](/licenses/).
+The project is licensed under the [MIT-0 license](./LICENSE).
+Licenses of libraries used in this project are listed in [/licenses](./licenses/).
 
 [^epc_qr]: European Payments Council, Quick Response Code: Guidelines to Enable Data Capture for the Initiation of a SEPA Credit Transfer, https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation
