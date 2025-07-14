@@ -6,7 +6,7 @@
 #import "/src/utils/call-wasm.typ": call-wasm
 #import "/src/config.typ": CURRENCY, DEFAULT-COLORS, FONT-SIZES
 #import "/src/components/bank-barcode.typ": bank-barcode
-#import "/src/components/bank_qrcode.typ": bank_qr_code
+#import "/src/components/bank-qrcode.typ": bank-qr-code
 
 /// Payment info: IBAN, BIC, amount to pay, etc.
 ///
@@ -94,7 +94,7 @@
     }),
 
     grid.cell(align: right + bottom, if qrcode {
-      bank_qr_code(
+      bank-qr-code(
         amount,
         beneficiary,
         iban,

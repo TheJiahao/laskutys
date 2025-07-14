@@ -3,13 +3,13 @@
 #import "/src/utils/get-bank-qr-payload.typ": get-bank-qr-payload
 
 /// -> content
-#let bank_qr_code(
+#let bank-qr-code(
   amount,
   beneficiary,
   iban,
   bic,
-  reference_number,
-  due_date,
+  reference-number,
+  due-date,
 ) = {
   assert(
     beneficiary.len() <= 70,
@@ -25,8 +25,8 @@
     beneficiary,
     iban,
     bic,
-    reference_number,
-    due_date,
+    reference-number,
+    due-date,
   )
 
   qrcode(payload, options: (
