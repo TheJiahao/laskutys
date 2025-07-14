@@ -4,7 +4,7 @@
 #import "/src/components/item_list.typ": item_list
 #import "/src/components/header.typ": header
 #import "/src/components/vat_section.typ": vat_section
-#import "/src/components/payment_info.typ": payment_info
+#import "/src/components/payment-info.typ": payment-info
 #import "/src/utils/get-invoice-number.typ": get-invoice-number
 #import "/src/utils/get-reference-number.typ": get-reference-number
 #import "/src/config.typ": DEFAULT-COLORS
@@ -86,15 +86,15 @@
     align: (left, right),
     [], vat_section(items, colors: colors),
   )
-  payment_info(
+  payment-info(
     beneficiary: seller.name,
     amount: sum,
-    due_date: due-date,
-    reference_number: reference-number,
+    due-date: due-date,
+    reference-number: reference-number,
     iban: iban,
     bic: bic,
     barcode: barcode,
-    show_barcode_text: show-barcode-text,
+    show-barcode-text: show-barcode-text,
     qrcode: qrcode,
     colors: colors,
   )
