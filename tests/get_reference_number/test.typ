@@ -1,4 +1,4 @@
-#import "/src/utils/get_reference_number.typ": preprocess
+#import "/src/utils/get-reference-number.typ": preprocess
 
 #assert.eq(
   preprocess("RF97012345"),

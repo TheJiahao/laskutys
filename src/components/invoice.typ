@@ -6,7 +6,7 @@
 #import "/src/components/vat_section.typ": vat_section
 #import "/src/components/payment_info.typ": payment_info
 #import "/src/utils/get-invoice-number.typ": get-invoice-number
-#import "/src/utils/get_reference_number.typ": get_reference_number
+#import "/src/utils/get-reference-number.typ": get-reference-number
 #import "/src/config.typ": DEFAULT-COLORS
 
 /// Invoice component.
@@ -64,7 +64,7 @@
   }
 
   if reference-number == auto {
-    reference-number = get_reference_number(invoice-number)
+    reference-number = get-reference-number(invoice-number)
   }
 
   let items = preprocess-items(items, vat-rate)
