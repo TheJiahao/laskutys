@@ -5,7 +5,7 @@
 )
 #import "/src/utils/call-wasm.typ": call-wasm
 #import "/src/config.typ": CURRENCY, DEFAULT-COLORS, FONT-SIZES
-#import "/src/components/bank_barcode.typ": bank_barcode
+#import "/src/components/bank-barcode.typ": bank-barcode
 #import "/src/components/bank_qrcode.typ": bank_qr_code
 
 /// Payment info: IBAN, BIC, amount to pay, etc.
@@ -84,12 +84,12 @@
     ),
 
     grid.cell(colspan: 3, align: left + bottom, if barcode {
-      bank_barcode(
+      bank-barcode(
         amount,
         iban,
         reference_number,
         due_date,
-        show_text: show_barcode_text,
+        show-text: show_barcode_text,
       )
     }),
 
