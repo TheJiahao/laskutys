@@ -30,12 +30,12 @@ The arguments `seller` and `recipient` are expected to be dictionaries like:
 ```typst
 (
     name: "Company Oy",
-    business_id: "1234567-8",
+    business-id: "1234567-8",
     address: [Street 123\ 01234 City],
 )
 ```
 
-The key `business_id` is optional for recipient and required for seller.
+The key `business-id` is optional for recipient and required for seller.
 The key `address` is displayed as is.
 `address` can also be `str` type, in that case, use `\n` as newline.
 
