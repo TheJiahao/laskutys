@@ -66,7 +66,7 @@ The argument `colors` is expected to be a dictionary like:
 
 ```typst
 (
-  bg_passive: gray.lighten(70%),
+  bg-passive: gray.lighten(70%),
   passive: gray.lighten(25%),
   active: black,
 )

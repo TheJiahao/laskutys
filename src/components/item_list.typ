@@ -7,7 +7,7 @@
     columns: 5,
     align: (left, right, right, right, right),
     fill: (_, y) => if calc.even(y) and y > 0 {
-      colors.bg_passive
+      colors.bg-passive
     },
     stroke: none,
     inset: (x: 0.75em, y: 0.5em),

@@ -1,7 +1,7 @@
-#import "/src/presets.typ": PRESET_MINIMAL
+#import "/src/presets.typ": PRESET-MINIMAL
 
 #let CURRENCY = "EUR"
-#let DEFAULT-COLORS = PRESET_MINIMAL
+#let DEFAULT-COLORS = PRESET-MINIMAL
 #let FONT-SIZES = (
   SMALL: 0.85em,
 )

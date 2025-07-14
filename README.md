@@ -135,7 +135,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
   colors: (
     ..DEFAULT_COLORS
     active: blue,
-    bg_passive: teal.lighten(85%),
+    bg-passive: teal.lighten(85%),
     passive: teal,
   ),
   data,
