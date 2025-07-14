@@ -27,7 +27,7 @@
     bic,
     beneficiary,
     iban.replace(" ", ""),
-    strfmt("EUR{:.2}", amount, decimal_separator: "."),
+    strfmt("EUR{:.2}", amount, fmt-decimal-separator: "."),
     "",
     reference-number.replace(" ", ""),
     "",
