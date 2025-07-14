@@ -1,3 +1,4 @@
 target
 *.wasm
 tests/**/out
+*.pdf
