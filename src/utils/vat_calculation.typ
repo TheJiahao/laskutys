@@ -1,5 +1,5 @@
 #import plugin("/rust_tools/rust_tools.wasm"): consolidate_vat
-#import "/src/utils/call_wasm.typ": call_wasm
+#import "/src/utils/call-wasm.typ": call-wasm
 #import "/src/utils/formatter.typ": formatter
 
 /// -> array
@@ -9,7 +9,7 @@
     total_price,
   ).map(str))
 
-  let result = call_wasm(consolidate_vat, items)
+  let result = call-wasm(consolidate_vat, items)
     .map(pair => pair.map(decimal))
     .map(((vat_rate, total_with_vat)) => {
       let total_without_vat = total_with_vat / (1 + vat_rate)

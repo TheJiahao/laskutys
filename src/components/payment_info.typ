@@ -3,7 +3,7 @@
 #import plugin("/rust_tools/rust_tools.wasm"): (
   check_reference_number, iban as iban_constructor,
 )
-#import "/src/utils/call_wasm.typ": call_wasm
+#import "/src/utils/call-wasm.typ": call-wasm
 #import "/src/config.typ": CURRENCY, DEFAULT-COLORS, FONT-SIZES
 #import "/src/components/bank_barcode.typ": bank_barcode
 #import "/src/components/bank_qrcode.typ": bank_qr_code
@@ -37,11 +37,11 @@
   assert(amount > decimal("0"), message: "Amount must be greater than zero")
 
   assert(
-    call_wasm(check_reference_number, reference_number),
+    call-wasm(check_reference_number, reference_number),
     message: "Invalid reference number",
   )
 
-  let iban = call_wasm(iban_constructor, iban)
+  let iban = call-wasm(iban_constructor, iban)
 
   let payment_block = [
     #set text(size: FONT-SIZES.SMALL)

@@ -1,5 +1,5 @@
 #import plugin("/rust_tools/rust_tools.wasm"): get_bank_barcode
-#import "/src/utils/call_wasm.typ": call_wasm
+#import "/src/utils/call-wasm.typ": call-wasm
 
 /// -> str
 #let get_bank_barcode_payload(amount, iban, reference_number, due_date) = {
@@ -10,7 +10,7 @@
     message: "Bank barcode supports only Finnish IBAN",
   )
 
-  call_wasm(get_bank_barcode, (
+  call-wasm(get_bank_barcode, (
     str(amount),
     iban,
     reference_number.replace(" ", ""),
