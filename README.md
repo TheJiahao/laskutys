@@ -33,10 +33,10 @@ See [API documentation](./docs/api.md) for all arguments.
   bic: "NDEAFIHH",
   seller: (
     name: "Yritys Oy",
-    business_id: "1234567-8",
+    business-id: "1234567-8",
     address: [Talousosasto\ PL 12\ 00100 Helsinki],
   ),
-  /// Recipient can also have business_id
+  /// Recipient can also have business-id
   recipient: (
     name: "Kuluttaja Nimi",
     address: [Kotikatu 1\ 00100 Helsinki],

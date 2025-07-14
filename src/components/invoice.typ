@@ -30,21 +30,21 @@
   /// For example, it can contain contacts, reverse charge if payer pays VAT, etc.
   footnotes: [],
   /// Days to due date
-  payment_terms: 14,
-  invoice_number: auto,
+  payment-terms: 14,
+  invoice-number: auto,
   logo: none,
   seller: none,
   recipient: none,
   /// Default VAT rate
-  vat_rate: decimal("0.255"),
+  vat-rate: decimal("0.255"),
   iban: none,
   bic: none,
   /// ISO 11649 reference number that begins with RF, only digits after RF are supported.
   /// Leading zeros after check digits are removed.
-  reference_number: auto,
+  reference-number: auto,
   /// Show bank barcode
   barcode: true,
-  show_barcode_text: true,
+  show-barcode-text: true,
   /// Show EPC QR code
   qrcode: true,
   font: auto,
@@ -59,20 +59,20 @@
     align(bottom, strong(c))
   } else { c }
 
-  if invoice_number == auto {
-    invoice_number = get_invoice_number(date)
+  if invoice-number == auto {
+    invoice-number = get_invoice_number(date)
   }
 
-  if reference_number == auto {
-    reference_number = get_reference_number(invoice_number)
+  if reference-number == auto {
+    reference-number = get_reference_number(invoice-number)
   }
 
-  let items = preprocess_items(items, vat_rate)
+  let items = preprocess_items(items, vat-rate)
   let sum = items.map(item => item.total_price).sum()
-  let due_date = date + duration(days: payment_terms)
+  let due-date = date + duration(days: payment-terms)
 
   header(
-    invoice_number,
+    invoice-number,
     date,
     recipient: recipient,
     seller: seller,
@@ -89,12 +89,12 @@
   payment_info(
     beneficiary: seller.name,
     amount: sum,
-    due_date: due_date,
-    reference_number: reference_number,
+    due_date: due-date,
+    reference_number: reference-number,
     iban: iban,
     bic: bic,
     barcode: barcode,
-    show_barcode_text: show_barcode_text,
+    show_barcode_text: show-barcode-text,
     qrcode: qrcode,
     colors: colors,
   )
