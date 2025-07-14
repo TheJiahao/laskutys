@@ -1,7 +1,7 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/utils/preprocess-items.typ": preprocess-items
 #import "/src/components/item-row.typ": item-row
-#import "/src/components/item_list.typ": item_list
+#import "/src/components/item-list.typ": item-list
 #import "/src/components/header.typ": header
 #import "/src/components/vat_section.typ": vat_section
 #import "/src/components/payment-info.typ": payment-info
@@ -79,7 +79,7 @@
     logo: logo,
   )
 
-  item_list(items, colors: colors)
+  item-list(items, colors: colors)
 
   grid(
     columns: (1fr, 3fr),

@@ -2,7 +2,7 @@
 #import "/src/components/item-row.typ": item-row
 #import "/src/config.typ": CURRENCY, DEFAULT-COLORS
 
-#let item_list(items, colors: DEFAULT-COLORS) = {
+#let item-list(items, colors: DEFAULT-COLORS) = {
   table(
     columns: 5,
     align: (left, right, right, right, right),
@@ -19,7 +19,7 @@
         "quantity",
       ),
       [#translate("vat")~(%)],
-      [#translate("price_with_vat")~(#CURRENCY)],
+      [#translate("price-with-vat")~(#CURRENCY)],
     ),
     table.hline(stroke: colors.active),
 

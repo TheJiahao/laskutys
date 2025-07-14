@@ -20,7 +20,7 @@
       [#translate("vat")~(%)],
       [#translate("price_without_vat")~(#CURRENCY)],
       [#translate("vat")~(#CURRENCY)],
-      [#translate("price_with_vat")~(#CURRENCY)],
+      [#translate("price-with-vat")~(#CURRENCY)],
     ),
     table.hline(stroke: colors.passive),
 
