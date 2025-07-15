@@ -39,12 +39,7 @@ This package is developed in Ubuntu 24.04 (WSL) but the instructions should work
 
     ```console
     just install-dev-deps
-    just install-cli
     ```
-
-> [!NOTE]
-> `install-dev-deps` is mostly for CI.
-> It does not install crates, since they are installed with cargo-install that caches them.
 
 ### Installing package locally
 

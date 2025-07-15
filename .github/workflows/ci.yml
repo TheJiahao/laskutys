@@ -17,9 +17,6 @@ jobs:
       - name: Set up
         uses: ./.github/workflows/setup-action
 
-      - name: Install Rust tools
-        run: just install-dev-deps
-
       - name: Install Typstyle
         uses: baptiste0928/cargo-install@v3
         with:

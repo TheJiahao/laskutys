@@ -4,10 +4,11 @@ description: Set up Rust
 runs:
   using: composite
   steps:
-    - name: Cache Rust dependencies
-      uses: Swatinem/rust-cache@v2
+    - name: Setup Rust
+      uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
-        workspaces: rust_tools
+        components: clippy, rustfmt
+        cache-workspaces: rust_tools
 
     - name: Install Just
       uses: baptiste0928/cargo-install@v3
