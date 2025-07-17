@@ -70,16 +70,10 @@ Format code:
 just format
 ```
 
-Build Rust binary (release) and copy WASM file:
+Build Rust binary and copy WASM file:
 
 ```console
 just build
-```
-
-Build Rust binary (dev) and copy WASM file:
-
-```console
-just dev
 ```
 
 Render all preview images
