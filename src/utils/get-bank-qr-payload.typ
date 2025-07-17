@@ -19,7 +19,7 @@
     message: "Amount must be between 0.01 and 999999999.99",
   )
 
-  (
+  let payload = (
     "BCD",
     "001",
     "1",
@@ -35,4 +35,15 @@
       "ReqdExctnDt/[year]-[month padding:zero]-[day padding:zero]",
     ),
   ).join("\n")
+
+  let payload_length = bytes(payload).len()
+  assert(
+    payload_length <= 331,
+    message: strfmt(
+      "Cannot encode data with maximum QR version 13: payload length {} is greater than 331",
+      payload_length,
+    ),
+  )
+
+  payload
 }

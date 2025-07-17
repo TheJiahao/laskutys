@@ -32,7 +32,5 @@
   qrcode(payload, options: (
     // error level M
     option-1: 2,
-    // QR code version 13
-    option-2: 13,
   ))
 }
