@@ -19,11 +19,13 @@ This package is developed in Ubuntu 24.04 (WSL) but the instructions should work
     ```
 
 1. Install [cwebp](https://developers.google.com/speed/webp/download) (libwebp).
-   For Ubuntu, run
+    For Ubuntu, run
 
-   ```console
+    ```console
     sudo apt install webp
-   ```
+    ```
+
+    For other distros, search for for packages named webp, libwebp or libwebp-tools.
 
     For Windows, install with Scoop or Winget
 
