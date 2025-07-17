@@ -133,7 +133,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 #invoice(
   ...
   colors: (
-    ..DEFAULT-COLORS
+    ..DEFAULT-COLORS,
     active: blue,
     bg-passive: teal.lighten(85%),
     passive: teal,
@@ -142,7 +142,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 )
 ```
 
-[![Changing colors](./docs/images/example_customize_colors.svg)](./examples/customize_colors/main.typ)
+![Changing colors](./docs/images/example_customize_colors.svg)
 
 > [!TIP]
 > The `DEFAULT-COLORS` is needed if you don't want to override all colors.
