@@ -44,10 +44,10 @@ This package is developed in Ubuntu 24.04 (WSL) but the instructions should work
 ### Installing package locally
 
 1. Install [showman](https://typst.app/universe/package/showman/)
-1. Install package locally to `@preview` (run in root)
+1. Install package locally to `@preview` (run in root if needed)
 
     ```console
-    showman package ./typst.toml -n preview -o
+    showman package ./typst.toml -n preview -o -s
     ```
 
 ## Commands
