@@ -120,6 +120,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 - [Development](./docs/development.md)
 - [Architecture](./docs/architecture.md)
 - [Color presets](./docs/color_presets.md)
+- [Changelog (releases)](https://github.com/TheJiahao/laskutys/releases)
 
 ## Examples
 
