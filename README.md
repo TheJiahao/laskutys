@@ -211,6 +211,8 @@ footnotes: "Company Oy, Phone: +358 123 4567, Email: sales.person@company.com"
 > `date` and `logo` cannot be read from non-Typst file since Typst cannot convert them.
 > Also, use quotes `"` for string containing newline `\n` or something that is converted incorrectly.
 
+See [/examples/read_from_file/](./examples/read_from_file/) for a minimal example.
+
 ### Automated invoice generation
 
 Typst CLI can pass [inputs](https://github.com/typst/typst/pull/2894) to Typst file using
