@@ -20,7 +20,7 @@ Among other things, this template features:
 See [API documentation](./docs/api.md) for all arguments.
 
 ```typst
-#import "@preview/laskutys:1.0.0": invoice
+#import "@preview/laskutys:1.1.0": invoice
 
 #let data = yaml("data.yaml")
 
@@ -127,7 +127,7 @@ You can also use other [loader functions](https://typst.app/docs/reference/data-
 ### Customize colors
 
 ```typst
-#import "@preview/laskutys:1.0.0": DEFAULT-COLORS, invoice
+#import "@preview/laskutys:1.1.0": DEFAULT-COLORS, invoice
 
 #let data = yaml("data.yaml")
 
@@ -162,7 +162,7 @@ Supported languages are
 - `sv`: Swedish
 
 ```typst
-#import "@preview/laskutys:1.0.0": invoice
+#import "@preview/laskutys:1.1.0": invoice
 
 #let data = yaml("data.yaml")
 
@@ -179,7 +179,7 @@ Using [spread](https://typst.app/docs/reference/foundations/arguments/) syntax, 
 For instance, from a YAML file.
 
 ```typst
-#import "@preview/laskutys:1.0.0": *
+#import "@preview/laskutys:1.1.0": *
 
 #let data = yaml("data.yaml")
 #let config = yaml("config.yaml")
@@ -225,7 +225,7 @@ typst compile file.typ --input key1=val1`
 The key value pairs can be accessed in Typst file using [`sys.inputs`](https://typst.app/docs/reference/foundations/sys/) as a dictionary.
 
 ```typst
-#import "@preview/laskutys:1.0.0": *
+#import "@preview/laskutys:1.1.0": *
 
 #let data = yaml("data.yaml")
 #let config = sys.inputs

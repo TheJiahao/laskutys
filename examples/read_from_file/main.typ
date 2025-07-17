@@ -1,4 +1,4 @@
-#import "@preview/laskutys:1.0.0": *
+#import "@preview/laskutys:1.1.0": *
 
 #let data = yaml("data.yaml")
 #let config = yaml("config.yaml")

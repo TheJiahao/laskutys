@@ -3,7 +3,7 @@
 Import presets from the package:
 
 ```typst
-#import "@preview/laskutys:1.0.0": PRESET-OCEAN
+#import "@preview/laskutys:1.1.0": PRESET-OCEAN
 ```
 
 ## PRESET-MINIMAL (default)
