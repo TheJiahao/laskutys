@@ -17,6 +17,6 @@
     address: [Kotikatu 1\ 00100 Helsinki],
   ),
   lang: "fi",
-  footnotes: [Company Oy, Phone: +358 123 4567, Email: sales.person\@company.com],
+  footnotes: [Yritys Oy, Puhelin: +358 123 4567, Sähköposti: invoices\@yritys.com],
   data,
 )
