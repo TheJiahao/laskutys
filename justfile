@@ -27,7 +27,7 @@ format:
     cargo fmt
 
 install target:
-    showman package ./typst.toml -o -n {{target}}
+    showman package ./typst.toml -s -o -n {{target}}
 
 img_dir := "docs/images"
 
