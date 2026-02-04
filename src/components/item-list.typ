@@ -1,8 +1,8 @@
 #import "/src/utils/translate.typ": translate
 #import "/src/components/item-row.typ": item-row
-#import "/src/config.typ": CURRENCY, DEFAULT-COLORS
+#import "/src/config.typ": DEFAULT-COLORS
 
-#let item-list(items, colors: DEFAULT-COLORS) = {
+#let item-list(items, currency, colors: DEFAULT-COLORS) = {
   table(
     columns: 5,
     align: (left, right, right, right, right),
@@ -14,12 +14,12 @@
 
     table.header(
       translate("item"),
-      [#translate("unit-price-without-vat")~(#CURRENCY)],
+      [#translate("unit-price-without-vat")~(#currency)],
       translate(
         "quantity",
       ),
       [#translate("vat")~(%)],
-      [#translate("price-with-vat")~(#CURRENCY)],
+      [#translate("price-with-vat")~(#currency)],
     ),
     table.hline(stroke: colors.active),
 

@@ -7,7 +7,7 @@
 #import "/src/components/payment-info.typ": payment-info
 #import "/src/utils/get-invoice-number.typ": get-invoice-number
 #import "/src/utils/get-reference-number.typ": get-reference-number
-#import "/src/config.typ": DEFAULT-COLORS
+#import "/src/config.typ": CURRENCY, DEFAULT-COLORS
 
 /// Invoice component.
 ///
@@ -79,7 +79,7 @@
     logo: logo,
   )
 
-  item-list(items, colors: colors)
+  item-list(items, CURRENCY, colors: colors)
 
   grid(
     columns: (1fr, 3fr),
