@@ -84,7 +84,7 @@
   grid(
     columns: (1fr, 3fr),
     align: (left, right),
-    [], vat-section(items, colors: colors),
+    [], vat-section(items, CURRENCY, colors: colors),
   )
   payment-info(
     CURRENCY,
