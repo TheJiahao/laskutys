@@ -4,7 +4,7 @@
   check_reference_number, iban as iban-constructor,
 )
 #import "/src/utils/call-wasm.typ": call-wasm
-#import "/src/config.typ": CURRENCY, DEFAULT-COLORS, FONT-SIZES
+#import "/src/config.typ": DEFAULT-COLORS, FONT-SIZES
 #import "/src/components/bank-barcode.typ": bank-barcode
 #import "/src/components/bank-qrcode.typ": bank-qr-code
 
@@ -12,6 +12,7 @@
 ///
 /// -> content
 #let payment-info(
+  currency,
   beneficiary: none,
   amount: none,
   iban: none,
@@ -62,7 +63,7 @@
       columns: 2,
       column-gutter: 1em,
       row-gutter: 0.5em,
-      [#translate("to-pay"):], [*#formatter("{:.2}", amount) #CURRENCY*],
+      [#translate("to-pay"):], [*#formatter("{:.2}", amount) #currency*],
 
       [#translate("due-date"):],
       due-date.display("[year]-[month padding:zero]-[day padding:zero]"),

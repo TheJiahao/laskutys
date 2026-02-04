@@ -87,6 +87,7 @@
     [], vat-section(items, colors: colors),
   )
   payment-info(
+    CURRENCY,
     beneficiary: seller.name,
     amount: sum,
     due-date: due-date,
