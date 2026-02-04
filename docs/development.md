@@ -49,7 +49,7 @@ This package is developed in Ubuntu 24.04 (WSL) but the instructions should work
 1. Install package locally to `@preview` (run in root if needed)
 
     ```console
-    showman package ./typst.toml -n preview -o -s
+    just install preview
     ```
 
 ## Commands
